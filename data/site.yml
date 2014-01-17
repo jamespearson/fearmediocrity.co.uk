@@ -1,0 +1,22 @@
+title: James Pearson, Ruby on Rails developer
+description: Coming Soon
+keywords: Coming soon
+baseurl: /
+url: http://fearmediocrity.co.uk
+author:
+  name: James Pearson
+  email: james@fearmediocrity.co.uk
+
+# Github repositories
+github_user: fearmediocrity
+github_repo_count: 0
+github_show_profile_link: false
+github_skip_forks: true
+
+# Twitter
+twitter_user: fearmediocrity
+
+# Google Analytics
+google_analytics_tracking_id: UA-35771182-1
+google_analytics_domain: fearmediocrity.co.uk
+
