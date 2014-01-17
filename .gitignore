@@ -17,3 +17,5 @@
 .DS_Store
 
 /.s3_sync
+
+.idea
