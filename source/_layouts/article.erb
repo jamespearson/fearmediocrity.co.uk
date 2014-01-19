@@ -1,0 +1,33 @@
+<% article ||= current_article %>
+
+<% content_for :title do %>
+    <%= article.title %>
+<% end %>
+
+<% content_for :page_class do "article" end %>
+<% content_for :main_class do "article" end %>
+
+<% content_for :description do article.data.description end %>
+
+<% wrap_layout :default do %>
+
+    <article class="feature blog">
+
+      <header>
+
+        <h1>
+          <%=article.data.title%>
+        </h1>
+        <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
+          <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
+        </p>
+
+      </header>
+
+      <div class="body">
+        <%= yield %>
+      </div>
+
+    </article>
+
+<% end %>

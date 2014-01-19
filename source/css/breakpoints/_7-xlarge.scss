@@ -1,0 +1,127 @@
+@media #{$xlarge-up} {
+
+  html{
+    body{
+
+      .container{
+
+        > header{
+          a{
+            img{
+
+            }
+          }
+          p{
+
+
+
+          }
+
+        }
+
+        > .main{
+
+          &.article{
+
+          }
+
+          &.article-list{
+            article{
+              > header{
+                h2{
+
+                }
+
+                p{
+                  a{
+
+                  }
+                }
+              }
+
+              .body{
+                p{
+
+                }
+              }
+
+            }
+          }
+
+        }
+
+        > footer{
+          p{
+
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+@media #{$xlarge-only} {
+
+  html{
+    body{
+
+      .container{
+
+        > header{
+          a{
+            img{
+
+            }
+          }
+          p{
+
+
+
+          }
+
+        }
+
+        > .main{
+
+          &.article{
+
+          }
+
+          &.article-list{
+            article{
+              > header{
+                h2{
+
+                }
+
+                p{
+                  a{
+
+                  }
+                }
+              }
+
+              .body{
+                p{
+
+                }
+              }
+
+            }
+          }
+
+        }
+
+        > footer{
+          p{
+
+          }
+        }
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,97 @@
+// config
+$debug: false;
+
+// declare breakpoints
+$breakpoint-x-small         : 200px;
+$breakpoint-small           : 320px;
+$breakpoint-small-medium    : 600px;
+$breakpoint-medium          : 800px;
+$breakpoint-large-medium    : 1000px;
+$breakpoint-large           : 1200px;
+$breakpoint-x-large         : 1400px;
+
+// create sass list to pass media query data
+// if a breakpoint name changes, remember to
+// update it in the list below as well
+$mq-sync:
+  usn-x-small        $breakpoint-x-small,
+  usn-small          $breakpoint-small,
+  usn-small-medium   $breakpoint-small-medium,
+  usn-medium         $breakpoint-medium,
+  usn-large-medium   $breakpoint-large-medium,
+  usn-large          $breakpoint-large,
+  usn-x-large        $breakpoint-x-large
+;
+
+// build each media query for js ingestion
+@each $mq in $mq-sync {
+  @media screen and (min-width: nth($mq, 2)) {
+    head { font-family: "#{nth($mq, 1)} #{nth($mq, 2)}"; }
+    body:after { content: "#{nth($mq, 1)} - min-width: #{nth($mq, 2)}"; }
+  }
+}
+
+head {
+  // set clear on head to show Unison is set up correctly
+  clear: both;
+  // store hash of all breakpoints
+  title { font-family: "#{$mq-sync}"; }
+}
+
+// debug styles to see breakpoint info
+body:after {
+  display: none;
+}
+
+@if $debug == true {
+  body:after {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    color: #FFF;
+    padding: 10px;
+    z-index: 1000;
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+}
+
+// hide elements for conditional loading
+// only used for responsive comments plugin
+*[data-usn-if] { display: none; }
+
+// Media Queries
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+
+$x-small-up: $screen !default;
+$x-small-only: "#{$screen} and (max-width: #{$breakpoint-small - 1})" !default;
+
+$small-up: "#{$screen} and (min-width:#{$breakpoint-small})" !default;
+$small-only: "#{$screen} and (min-width:#{$breakpoint-small}) and (max-width:#{$breakpoint-small-medium - 1})" !default;
+
+$small-medium-up: "#{$screen} and (min-width:#{$breakpoint-small-medium})" !default;
+$small-medium-only: "#{$screen} and (min-width:#{$breakpoint-small-medium}) and (max-width:#{$breakpoint-medium - 1})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{$breakpoint-medium})" !default;
+$medium-only: "#{$screen} and (min-width:#{$breakpoint-medium}) and (max-width:#{$breakpoint-large - 1})" !default;
+
+$large-medium-up: "#{$screen} and (min-width:#{$breakpoint-large-medium})" !default;
+$large-medium-only: "#{$screen} and (min-width:#{$breakpoint-large-medium}) and (max-width:#{$breakpoint-large - 1})" !default;
+
+$large-up: "#{$screen} and (min-width:#{$breakpoint-large})" !default;
+$large-only: "#{$screen} and (min-width:#{$breakpoint-large}) and (max-width:#{$breakpoint-x-large - 1})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{$breakpoint-x-large})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{$breakpoint-x-large})" !default;
+
+
+

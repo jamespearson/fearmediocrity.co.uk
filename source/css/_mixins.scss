@@ -1,0 +1,104 @@
+@mixin font-size($fontsize: 1, $lineheight: $fontsize * 1.6 ){
+  font-size: ($fontsize * 10) + px;
+  font-size: $fontsize + rem;
+  line-height: ($lineheight * 10) + px;
+  line-height: $lineheight + rem;
+}
+
+@mixin line-height($lineheight: 1.6){
+  line-height: ($lineheight$lineheight * 10) + px;
+  line-height: $sizeValue + rem;
+}
+
+.hidden{
+  display: none;
+}
+.inline_list{
+  @extend .clearfix;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    float: left;
+    margin: 0;
+  }
+}
+
+@mixin inline_list{
+  @extend .clearfix;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    float: left;
+    margin: 0;
+  }
+}
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin clearfix{
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+.social{
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+
+    li{
+      display: inline-block;
+      text-align:center;
+      width: 15%;
+
+      a{
+        @extend .symbol;
+
+        display: inline;
+        text-decoration: none;
+
+        &:before {
+          @include font-size(1.6, 1);
+          color: rgba($white, 0.5);
+          font-weight: normal;
+
+        }
+
+        &[href*="twitter.com"]:before {     content: '\e800';}
+        &[href*="linkedin.com"]:before {    content: '\e802'; }
+        &[href*="plus.google.com"]:before { content: '\e801'; }
+        &[href*="github.com"]:before {      content: '\e803'; }
+        &[href*="/contact/"]:before {       content: '\e804'; }
+
+        span{
+          display: none
+        }
+      }
+    }
+
+}
