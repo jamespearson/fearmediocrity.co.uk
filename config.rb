@@ -6,7 +6,7 @@ require "active_support/all"
 # Time.zone = "UTC"
 #
 #sprockets.append_path '/source/js/plugins/'
-activate :asset_hash
+
 
 
 activate  :blog do |blog|
@@ -81,6 +81,8 @@ configure :build do
 
   #activate :asset_host, host: 'http://testassets.fearmediocrity.co.uk'
 
+  activate :asset_hash
+  
   # For example, change the Compass output style for deployment
   activate :minify_css
 
