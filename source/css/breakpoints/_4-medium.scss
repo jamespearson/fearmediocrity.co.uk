@@ -17,8 +17,12 @@
 
           > a{
             text-align: center;
-            img{
-               margin-right: 0;
+            .avatar{
+              background-image: image-url('avatar_140x140.jpg');
+              border-radius: 70px;
+              margin-right: 0;
+              height: 140px;
+              width: 140px;
             }
 
             p{

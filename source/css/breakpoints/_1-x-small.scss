@@ -11,10 +11,18 @@ html{
         > a{
           display: block;
 
-          img{
+          .avatar{
+            background-image: image-url('avatar_80x80.jpg');
+            border-radius: 40px;
             display: inline-block;
+            height: 80px;
             margin-right: 20px;
             vertical-align: top;
+            width: 80px;
+          }
+
+          img{
+
           }
 
           p{
