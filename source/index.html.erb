@@ -3,21 +3,3 @@ layout: article_list
 pageable: true
 per_page: 10
 ---
-
-<% page_articles.each_with_index do |article, i| %>
-
-    <article>
-        <header>
-            <h2><%= link_to article.title, article %></h2>
-            <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
-               <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
-            </p>
-        </header>
-
-        <div class="body">
-          <p><%=article.summary%></p>
-        </div>
-
-    </article>
-
-<% end %>
