@@ -126,6 +126,13 @@ html{
 
         &.article{
           article{
+
+            > header{
+              h1{
+                @include font-size(2.4, 2.5);
+                margin: 0;
+              }
+            }
             .body{
               p{
 
