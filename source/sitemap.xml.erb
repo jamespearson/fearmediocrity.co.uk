@@ -1,0 +1,11 @@
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% pages.each do |p| %>
+    <% next if ["google152d413d2b447042.html"].include?(p.destination_path)%>
+<url>
+<loc><%=data.site.url%>/<%=p.destination_path.gsub('/index.html','')%></loc>
+<priority>0.7</priority>
+</url>
+<% end %>
+</urlset>
