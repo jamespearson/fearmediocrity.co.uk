@@ -15,7 +15,7 @@
           height: 100%;
           width: 300px;
 
-          a{
+          > a{
             text-align: center;
             img{
                margin-right: 0;
@@ -33,6 +33,7 @@
 
           .social{
             display: block;
+            margin: 10px 0;
           }
 
         }
