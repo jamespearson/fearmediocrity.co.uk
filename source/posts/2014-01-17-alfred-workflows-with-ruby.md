@@ -1,7 +1,7 @@
 ---
 title: Alfred Workflows with Ruby
 description: Creating a simple Alfred 2 Workflow to retrive numbers form SayNoTo0780, using Ruby.
-tags: example, programming
+tags: ruby, alfred, projects
 ---
 
 On a whim, I recently decided to learn more about creating workflows for [Alfred](http://www.alfredapp.com/) using Ruby.
