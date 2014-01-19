@@ -36,10 +36,18 @@ html{
           display: none;
         }
 
+        .social{
+          display: none;
+        }
       }
 
       > .main{
         padding: 0 5%;
+
+        > header{
+
+        }
+
         &.article{
 
         }
