@@ -20,8 +20,18 @@
             img{
                margin-right: 0;
             }
+
+            p{
+              span{
+                display: none;
+              }
+            }
           }
           p{
+            display: block;
+          }
+
+          .social{
             display: block;
           }
 
