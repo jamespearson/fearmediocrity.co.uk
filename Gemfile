@@ -7,6 +7,7 @@ gem 'bourbon'
 gem "builder", "~> 3.0.0"
 gem "kramdown"
 gem "middleman", "~>3.1.5"
+gem "middleman-deploy"
 gem 'middleman-autoprefixer'
 gem "middleman-blog", "~> 3.2.0"
 gem "middleman-minify-html"

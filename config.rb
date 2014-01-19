@@ -33,6 +33,15 @@ activate  :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = "fearmediocrity.co.uk"
+  deploy.path   = "/var/www/fearmediocrity/public"
+  deploy.build_before = true
+  deploy.clean = true
+  deploy.user = "root"
+end
+
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'fearmediocrity-production' # The name of the S3 bucket you are targetting. This is globally unique.
   s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
@@ -70,7 +79,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 # Build-specific configuration
 configure :build do
 
-  activate :asset_host, host: 'http://testassets.fearmediocrity.co.uk'
+  #activate :asset_host, host: 'http://testassets.fearmediocrity.co.uk'
 
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -92,3 +101,4 @@ configure :build do
   activate :smusher
 
 end
+
