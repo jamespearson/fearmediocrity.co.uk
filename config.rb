@@ -83,6 +83,8 @@ configure :build do
 
   #activate :asset_host, host: 'http://testassets.fearmediocrity.co.uk'
 
+  activate :asset_hash
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
