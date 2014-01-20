@@ -134,14 +134,15 @@ It also allows the error to be logged to '''' ~/Library/Logs/Alfred-Workflow.log
 
     uri = URI.parse("http://saynoto0870.fearmediocrity.co.uk/")
 
-  if (query.gsub(" ","") =~ /[0-9]+/)
-    alfred.ui.debug "Searching Numbers: #{query}"
-    response = Net::HTTP.post_form(uri, {"number" => query.gsub(" ",""), "workflow_version" => WORKFLOW_VERSION})
-  else
-    alfred.ui.debug "Searching Companies: #{query}"
-    response = Net::HTTP.post_form(uri, {"company" => query, "workflow_version" => WORKFLOW_VERSION})
-  end
-json_response = JSON.parse(response.body)
+    if (query.gsub(" ","") =~ /[0-9]+/)
+        alfred.ui.debug "Searching Numbers: #{query}"
+        response = Net::HTTP.post_form(uri, {"number" => query.gsub(" ",""), "workflow_version" => WORKFLOW_VERSION})
+    else
+        alfred.ui.debug "Searching Companies: #{query}"
+        response = Net::HTTP.post_form(uri, {"company" => query, "workflow_version" => WORKFLOW_VERSION})
+    end
+
+    json_response = JSON.parse(response.body)
 
 Here we are taking the users query and sending it to the API server as either a company name or expensive number.
 
