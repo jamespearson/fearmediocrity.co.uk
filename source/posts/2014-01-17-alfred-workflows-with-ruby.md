@@ -203,6 +203,7 @@ If I find some time I may go back and add tests to at least the API server.
 ## The Finished Product
 
 The finished code can be found at:
-* [Exported Workflow]()
-* [Workflow Source Code](https://github.com/FearMediocrity/alfred2-saynoto0870)
-* [API Server](https://github.com/FearMediocrity/saynoto0870-api)
+
+*   [Exported Workflow](https://github.com/FearMediocrity/alfred2-saynoto0870/raw/master/binary/alfred-2-saynoto0870.alfredworkflow)
+*   [Workflow Source Code](https://github.com/FearMediocrity/alfred2-saynoto0870)
+*   [API Server](https://github.com/FearMediocrity/saynoto0870-api)
