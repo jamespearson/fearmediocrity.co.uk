@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jquery": "~2.0.3",
-    "jquery-pjax": "latest"
+    "jquery-pjax": "latest",
+    "unison": "~0.5.0"
   }
 }

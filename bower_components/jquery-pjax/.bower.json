@@ -17,7 +17,6 @@
     "commit": "99300241a530b336410827595ff0820a8de3da42"
   },
   "_source": "git://github.com/defunkt/jquery-pjax.git",
-  "_target": "~1.7.3",
-  "_originalSource": "jquery-pjax",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "jquery-pjax"
 }
