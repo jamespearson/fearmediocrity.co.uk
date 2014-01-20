@@ -1,0 +1,21 @@
+{
+  "name": "fearmediocrity.co.uk",
+  "version": "0.7.0",
+  "homepage": "http://fearmediocrity.co.uk",
+  "authors": [
+    "James Pearson <james.pearson@thinkingincode.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "jquery-pjax": "latest"
+  }
+}
