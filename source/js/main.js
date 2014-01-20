@@ -4,3 +4,5 @@
 
 /* jQuery Based Plugins */
 //= require jquery-pjax/jquery.pjax.js
+
+//= require "pjax-controller"
