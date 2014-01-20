@@ -76,6 +76,8 @@ set :js_dir, 'js'
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 
+sprockets.append_path File.join "#{root}", "bower_components"
+
 # Build-specific configuration
 configure :build do
 
