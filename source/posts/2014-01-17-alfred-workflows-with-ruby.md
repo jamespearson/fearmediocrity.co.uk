@@ -9,7 +9,7 @@ On a whim, I recently decided to learn more about creating workflows for [Alfred
 At least a couple of times a week I get a conference call request, which involves calling an expensive (from mobile) 0870 or 0845 number. Because of this, I use [SayNoTo0870](http://www.saynoto0870.com) to find cheaper alternate numbers and have decided to make a workflow to display data.
 READMORE
 
-<screenshot>
+![alternate text](/img/2014-01-17-a.png)
 
 ## Creating the data source
 SayNoTo0870 doesn't have a public api (or a site designed in the last 10 years), so the first step will be converting their HTML into a useable format.
@@ -84,13 +84,13 @@ Using Zhao Cai's [alfred2-ruby-template](https://github.com/zhaocai/alfred2-ruby
 
 This will install your workflow into Alfred's Workflow Manager.
 
-<picture 1>
+![alternate text](/img/2014-01-17-b.jpg)
 
 ### Setting the meta data
 
 In the Workflow manager, right click the "Ruby Based Workflow Template" and select "Edit", this will allow you to customise your workflow with your own information.
 
-<picture 2>
+![alternate text](/img/2014-01-17-c.jpg)
 
 ### The workflow
 
@@ -126,13 +126,13 @@ The scripts functionality can be broken down as follows:
 
 By wrapping the script in ''''Alfred.with_friendly_error we allow the script to display a message if their is a technical error:
 
-<picture 3>
+![alternate text](/img/2014-01-17-d.jpg)
 
 It also allows the error to be logged to '''' ~/Library/Logs/Alfred-Workflow.log which will be essential in debugging those Ruby 1.8 problems.
 
     query = ARGV[0]
 
-  uri = URI.parse("http://saynoto0870.fearmediocrity.co.uk/")
+    uri = URI.parse("http://saynoto0870.fearmediocrity.co.uk/")
 
   if (query.gsub(" ","") =~ /[0-9]+/)
     alfred.ui.debug "Searching Numbers: #{query}"
@@ -160,7 +160,7 @@ Once every item has been added we return the items as XML for Alfred to process:
 
 While the alfred2-ruby-framework takes care of formatting the XML to Alfred's specifications, you can find specific examples in the Workflow Manager
 
-<picture 5>
+![alternate text](/img/2014-01-17-d.jpg)
 
 ##
 
