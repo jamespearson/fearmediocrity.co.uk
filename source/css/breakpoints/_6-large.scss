@@ -21,30 +21,9 @@
 
         > .main{
           max-width: 960px;
-          
-          &.article{
 
-          }
-
-          &.article-list{
-            article{
-              > header{
-                h2{
-
-                }
-
-                p{
-                  a{
-
-                  }
-                }
-              }
-
-              .body{
-                p{
-
-                }
-              }
+          article{
+            &.article-list{
 
             }
           }

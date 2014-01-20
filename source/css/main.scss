@@ -78,82 +78,67 @@ html{
 
       > .main{
 
-        &.article,
-        &.article-list{
+        article{
+          margin-bottom: 30px;
 
-          article{
-            margin-bottom: 30px;
+          &:after{
+            border-bottom: 1px solid rgba($mine_shaft, 0.2);
+            content: " ";
+            display: block;
+            margin: 30px auto 0;
+            width: 100%;
+          }
 
+          &:last-child{
             &:after{
-              border-bottom: 1px solid rgba($mine_shaft, 0.2);
-              content: " ";
-              display: block;
-              margin: 30px auto 0;
-              width: 100%;
+              display: none;
+            }
+          }
+
+          a{
+            color: $mine_shaft;
+            text-decoration: underline;
+          }
+
+          > header{
+            @include title_font;
+
+            h1{
+              @include font-size(2.4, 2.5);
+              margin: 0;
             }
 
-            &:last-child{
-              &:after{
-                display: none;
+            h2{
+              margin: 0;
+
+              a{
+                text-decoration: none;
               }
             }
 
-            a{
-              color: $mine_shaft;
-              text-decoration: underline;
-            }
-
-            > header{
-              @include title_font;
-
-              h2{
-                margin: 0;
-
-                a{
-                  text-decoration: none;
-                }
-              }
-
-              p{
-                margin: 0;
+            p{
+              margin: 0;
+              color: rgba($mine_shaft, 0.6);
+              a{
                 color: rgba($mine_shaft, 0.6);
-                a{
-                  color: rgba($mine_shaft, 0.6);
-                }
-              }
-            }
-
-            > .body{
-
-            }
-          }
-        }
-
-        &.article{
-          article{
-
-            > header{
-              h1{
-                @include font-size(2.4, 2.5);
-                margin: 0;
-              }
-            }
-            .body{
-
-              h2{
-                border-bottom: 1px solid rgba($mine_shaft, 0.2);
-                padding-bottom: 10px;
-              }
-              p{
-
               }
             }
           }
 
-        }
+          .body{
 
-        &.article-list{
-          article{
+            h2{
+              border-bottom: 1px solid rgba($mine_shaft, 0.2);
+              padding-bottom: 10px;
+            }
+            p{
+
+            }
+
+          }
+
+          &.article-list{
+
             > header{
 
               h2{
@@ -170,11 +155,10 @@ html{
 
               }
             }
-
           }
         }
-
       }
+
 
       > footer{
         p{
