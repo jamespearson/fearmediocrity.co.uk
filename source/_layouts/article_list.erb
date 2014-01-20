@@ -1,7 +1,9 @@
 <% content_for :page_class do "article-list" end %>
 <% content_for :main_class do "article-list" end %>
 
-<% wrap_layout :default do %>
+<% layout = "default" %>
+<% layout = "pjax" if request.params["_pjax"] %>
 
+<% wrap_layout layout do %>
     <%= yield %>
 <% end %>

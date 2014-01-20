@@ -9,7 +9,11 @@
 
 <% content_for :description do article.data.description end %>
 
-<% wrap_layout :default do %>
+
+<% layout = "default" %>
+<% layout = "pjax" if request.params["_pjax"] %>
+
+<% wrap_layout layout do %>
 
     <article class="feature blog">
 
