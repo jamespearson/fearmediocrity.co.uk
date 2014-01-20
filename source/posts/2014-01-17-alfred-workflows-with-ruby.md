@@ -185,7 +185,7 @@ I use VMWare for cross browser testing, and this is also capable of running Virt
 
 While I haven't done it, it should be possible to create a similar environment using VirtualBox or other software... if all else fails then bug your friends on earlier versions of OSX.
 
-## Step X - Exporting the finished product.
+## Exporting the finished product.
 
 Once you've tested, and are happy with the finished workflow you can export it for distribution by right clicking the workflow name in the workflow manager and selecting "Export".
 
