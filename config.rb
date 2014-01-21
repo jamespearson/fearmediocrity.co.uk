@@ -59,7 +59,7 @@ page "/feed.xml", :layout => false
 default_caching_policy max_age:(60 * 60 * 24 * 365)
 
 # Automatic image dimensions on image_tag helper
-activate :automatic_image_sizes
+#activate :automatic_image_sizes
 
 set :layouts_dir, '_layouts'
 set :partials_dir, '_partials'

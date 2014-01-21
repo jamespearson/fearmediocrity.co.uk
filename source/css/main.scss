@@ -41,6 +41,9 @@ a, a:focus, a:link, a:active, a:visited, img{
   text-decoration: none;
 }
 
+img{
+  max-width: 100%;
+}
 html{
   background: #ededed;
 
