@@ -20,48 +20,50 @@ My backup plan was to create a proxy api, using Sinatra, to scrape the page and 
 
 The data source scours SayNoTo0870 for data and returns it in a the following JSON format:
 
+~~~json
+{
+"verified": [
     {
-    "verified": [
-        {
-            "company_name": "BT Yahoo Internet | BT Internet (BT-)",
-            "type": "free",
-            "number": "0800 6335335",
-            "other_information": "BT- Dial-up Support Services"
-        },
-        {
-            "company_name": "BT Yahoo Internet | BT Internet (BT-)",
-            "type": "free",
-            "number": "0800 0852819",
-            "other_information": "Cancellations"
-        },
-        {
-            "company_name": "BT Yahoo Internet | BT Internet (BT-)",
-            "type": "normal",
-            "number": "+441214789200",
-            "other_information": "BT- PAYG Dial-Up;Use FULL International number otherwise ISP exclusion list means you will be charged the 0845 rate"
-        },
-        {
-            "company_name": "BT Yahoo Internet | BT Internet (BT-)",
-            "type": "normal",
-            "number": "+441214789300",
-            "other_information": "BT- PAYG (ISDN) Dial-Up;Use FULL International number otherwise ISP exclusion list means you will be charged the 0845 rate"
-        }
-    ],
-    "unverified": [
-        {
-            "company_name": "BT INTERNET HELP",
-            "type": "free",
-            "number": "0800 1114567",
-            "other_information": ""
-        },
-        {
-            "company_name": "XPG",
-            "type": "normal",
-            "number": "07702 949318",
-            "other_information": "Entertainment agency\r\nBT Internet line: 05601 129298"
-        }
-    ]
+        "company_name": "BT Yahoo Internet | BT Internet (BT-)",
+        "type": "free",
+        "number": "0800 6335335",
+        "other_information": "BT- Dial-up Support Services"
+    },
+    {
+        "company_name": "BT Yahoo Internet | BT Internet (BT-)",
+        "type": "free",
+        "number": "0800 0852819",
+        "other_information": "Cancellations"
+    },
+    {
+        "company_name": "BT Yahoo Internet | BT Internet (BT-)",
+        "type": "normal",
+        "number": "+441214789200",
+        "other_information": "BT- PAYG Dial-Up;Use FULL International number otherwise ISP exclusion list means you will be charged the 0845 rate"
+    },
+    {
+        "company_name": "BT Yahoo Internet | BT Internet (BT-)",
+        "type": "normal",
+        "number": "+441214789300",
+        "other_information": "BT- PAYG (ISDN) Dial-Up;Use FULL International number otherwise ISP exclusion list means you will be charged the 0845 rate"
+    }
+],
+"unverified": [
+    {
+        "company_name": "BT INTERNET HELP",
+        "type": "free",
+        "number": "0800 1114567",
+        "other_information": ""
+    },
+    {
+        "company_name": "XPG",
+        "type": "normal",
+        "number": "07702 949318",
+        "other_information": "Entertainment agency\r\nBT Internet line: 05601 129298"
+    }
+]
 }
+~~~
 
 The source code for the api can be found on [Github], (https://github.com/FearMediocrity/saynoto0870-api), or can be accessed via a post request to (http://saynoto0870.fearmediocrity.co.uk) with either a *number* or *company* parameter.
 
@@ -71,12 +73,16 @@ As previously mentioned, Alfred 2 supports from OSX 10.6 and upwards, which mean
 
 As an RVM user the downgrade process was simple enough
 
-    rvm install 1.8.7
-    rvm use 1.8.7 --default
+~~~shell
+rvm install 1.8.7
+rvm use 1.8.7 --default
+~~~
 
 By setting 1.8.7 to the system default it will ensure your workflow works on older OSX versions. However, don't forget to switch back to a moderner Ruby later using:
 
-    rvm use system --default
+~~~shell
+rvm use system --default
+~~~
 
 ## The Alfred Workflow
 
@@ -111,7 +117,9 @@ This is because to distribute the workflow we need to package any gems locally, 
 
 If you encounter any problems with this install the gems in standalone mode with the command:
 
-    bundle --standalone
+~~~shell
+bundle --standalone
+~~~
 
 ## The Ruby Script
 
@@ -119,45 +127,53 @@ When a user triggers the keyword, the script [workflow/main.rb](https://github.c
 
 The scripts functionality can be broken down as follows:
 
-    Alfred.with_friendly_error do |alfred|
-  fb = alfred.feedback
+~~~ruby
+Alfred.with_friendly_error do |alfred|
+fb = alfred.feedback
 
-  query = ARGV[0]
+query = ARGV[0]
+~~~
 
-By wrapping the script in ''''Alfred.with_friendly_error we allow the script to display a message if their is a technical error:
+By wrapping the script in ````Alfred.with_friendly_error we allow the script to display a message if their is a technical error:
 
-![alternate text](/img/2014-01-17-d.jpg)
+![alternate text](/img/2014-01-17-e.png)
 
-It also allows the error to be logged to '''' ~/Library/Logs/Alfred-Workflow.log which will be essential in debugging those Ruby 1.8 problems.
+It also allows the error to be logged to ` ~/Library/Logs/Alfred-Workflow.log which will be essential in debugging those Ruby 1.8 problems.
 
-    query = ARGV[0]
+~~~ruby
+query = ARGV[0]
 
-    uri = URI.parse("http://saynoto0870.fearmediocrity.co.uk/")
+uri = URI.parse("http://saynoto0870.fearmediocrity.co.uk/")
 
-    if (query.gsub(" ","") =~ /[0-9]+/)
-        alfred.ui.debug "Searching Numbers: #{query}"
-        response = Net::HTTP.post_form(uri, {"number" => query.gsub(" ",""), "workflow_version" => WORKFLOW_VERSION})
-    else
-        alfred.ui.debug "Searching Companies: #{query}"
-        response = Net::HTTP.post_form(uri, {"company" => query, "workflow_version" => WORKFLOW_VERSION})
-    end
+if (query.gsub(" ","") =~ /[0-9]+/)
+    alfred.ui.debug "Searching Numbers: #{query}"
+    response = Net::HTTP.post_form(uri, {"number" => query.gsub(" ",""), "workflow_version" => WORKFLOW_VERSION})
+else
+    alfred.ui.debug "Searching Companies: #{query}"
+    response = Net::HTTP.post_form(uri, {"company" => query, "workflow_version" => WORKFLOW_VERSION})
+end
 
-    json_response = JSON.parse(response.body)
+json_response = JSON.parse(response.body)
+~~~
 
 Here we are taking the users query and sending it to the API server as either a company name or expensive number.
 
 The server will return JSON, which is parsed in to a ruby hash, and looped through to add the items alfred will display.
 
-    fb.add_item({
-        :uid => uid,
-        :title    => result["number"] ,
-        :subtitle => result["subtitle"] ,
-        :valid    => "yes"
-      })
+~~~ruby
+fb.add_item({
+    :uid => uid,
+    :title    => result["number"] ,
+    :subtitle => result["subtitle"] ,
+    :valid    => "yes"
+  })
+~~~
 
 Once every item has been added we return the items as XML for Alfred to process:
 
-    puts fb.to_xml if fb.items.count > 0
+~~~ruby
+puts fb.to_xml if fb.items.count > 0
+~~~
 
 While the alfred2-ruby-framework takes care of formatting the XML to Alfred's specifications, you can find specific examples in the Workflow Manager
 
@@ -169,11 +185,13 @@ Alfred does not currently have the option to wait for the user to finish typing 
 
 This means that if the user is searching for "British Gas" the script will trigger as follows:
 
-    /usr/bin/ruby ./main.rb "B"
-    /usr/bin/ruby ./main.rb "Br"
-    /usr/bin/ruby ./main.rb "Bri"
-    /usr/bin/ruby ./main.rb "Brit"
-    etc etc
+~~~shell
+/usr/bin/ruby ./main.rb "B"
+/usr/bin/ruby ./main.rb "Br"
+/usr/bin/ruby ./main.rb "Bri"
+/usr/bin/ruby ./main.rb "Brit"
+etc etc
+~~~
 
 To overcome this I did two things. The first was to not send the search to the API server if the user is searching for a number and hasn't provided enough digits.
 
