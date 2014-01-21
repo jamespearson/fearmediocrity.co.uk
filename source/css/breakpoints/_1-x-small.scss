@@ -56,13 +56,8 @@ html{
 
         }
 
-        &.article{
-
-        }
-
-        &.article-list{
-
-          article{
+        article{
+          &.article-list{
             > header{
               h2{
                 @include font-size(1.8);
@@ -83,10 +78,8 @@ html{
 
               }
             }
-
           }
         }
-
       }
 
       > footer{
