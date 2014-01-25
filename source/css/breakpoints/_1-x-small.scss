@@ -57,20 +57,24 @@ html{
         }
 
         article{
+
+          > header{
+            p{
+              span{
+                display: none;
+              }
+              a{
+
+              }
+            }
+          }
           &.article-list{
             > header{
               h2{
                 @include font-size(1.8);
               }
 
-              p{
-                span{
-                  display: none;
-                }
-                a{
 
-                }
-              }
             }
 
             .body{
