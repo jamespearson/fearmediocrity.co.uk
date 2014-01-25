@@ -58,6 +58,8 @@ page "/feed.xml", :layout => false
 
 default_caching_policy max_age:(60 * 60 * 24 * 365)
 
+sprockets.append_path File.join "#{root}", "bower_components"
+
 # Automatic image dimensions on image_tag helper
 #activate :automatic_image_sizes
 
