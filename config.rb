@@ -75,7 +75,7 @@ set :markdown_engine, :redcarpet
 # Build-specific configuration
 configure :build do
 
-  activate :asset_host, host: 'http://assets.fearmediocrity.co.uk/public'
+  activate :asset_host, host: 'http://assets.fearmediocrity.co.uk'
 
   activate :asset_hash
 
