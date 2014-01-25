@@ -33,6 +33,5 @@
   },
   "_source": "git://github.com/bjork24/Unison.git",
   "_target": "~0.5.0",
-  "_originalSource": "unison",
-  "_direct": true
+  "_originalSource": "unison"
 }
