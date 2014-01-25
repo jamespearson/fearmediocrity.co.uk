@@ -48,6 +48,14 @@
           padding: 40px;
 
           article{
+
+            > header{
+              p{
+                span{
+                  display: inline;
+                }
+              }
+            }
             &.article-list{
               > header{
                 h2{
@@ -61,7 +69,7 @@
                   }
 
                   span{
-                    display: inline;
+                    
                   }
                 }
               }
