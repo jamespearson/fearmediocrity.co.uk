@@ -19,3 +19,5 @@
 /.s3_sync
 
 .idea
+
+/source/css/.sass-cache/
