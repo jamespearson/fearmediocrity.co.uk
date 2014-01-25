@@ -7,8 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 
+  <link href="//assets.fearmediocrity.co.uk" rel="dns-prefetch">
   <link href="//www.google-analytics.com" rel="dns-prefetch">
   <link href="//ajax.googleapis.com" rel="dns-prefetch">
+
 
   <% title = "#{yield_content(:title) + ' - ' if content_for?(:title)}#{data.site.title}" %>
   <% description = yield_content(:description) || data.site.description %>
