@@ -13,7 +13,6 @@ gem "middleman-blog", "~> 3.2.0"
 gem "middleman-minify-html"
 gem 'middleman-smusher'
 gem "middleman-syntax"
-gem 'middleman-s3_sync'
 gem "nokogiri"
 gem "redcarpet"
 gem "sass", '~> 3.2.12'

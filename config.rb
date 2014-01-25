@@ -40,15 +40,6 @@ activate :deploy do |deploy|
   deploy.user = "root"
 end
 
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'fearmediocrity-production' # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
-  s3_sync.delete                     = true # We delete stray files by default.
-  s3_sync.prefer_gzip                = true
-  s3_sync.path_style                 = true
-  #s3_sync.after_build                = true
-end
-
 activate  :syntax,
           :element => "pre>code"
 
@@ -58,7 +49,6 @@ page "robots.txt", :layout => false
 page "humans.txt", :layout => false
 page "/feed.xml", :layout => false
 
-default_caching_policy max_age:(60 * 60 * 24 * 365)
 
 set :layouts_dir, '_layouts'
 set :partials_dir, '_partials'
