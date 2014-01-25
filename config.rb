@@ -60,17 +60,13 @@ page "/feed.xml", :layout => false
 
 default_caching_policy max_age:(60 * 60 * 24 * 365)
 
-sprockets.append_path File.join "#{root}", "bower_components"
-
-# Automatic image dimensions on image_tag helper
-#activate :automatic_image_sizes
-
 set :layouts_dir, '_layouts'
 set :partials_dir, '_partials'
 
 set :css_dir, 'css'
 set :images_dir, 'img'
 set :js_dir, 'js'
+
 
 
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
@@ -83,7 +79,6 @@ configure :build do
 
   activate :asset_hash
 
-  # For example, change the Compass output style for deployment
   activate :minify_css
 
   activate :minify_html
@@ -91,16 +86,12 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Enable cache buster
-  activate :cache_buster
-
-  # Use relative URLs
-  # activate :relative_assets
-
   # Compress PNGs after build
-  # First: gem install middleman-smusher
   require "middleman-smusher"
   activate :smusher
 
 end
 
+after_configuration do
+  sprockets.append_path File.join "#{root}", "bower_components"
+end
