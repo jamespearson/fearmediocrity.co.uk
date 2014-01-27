@@ -1,7 +1,11 @@
-# Using bower with Middleman
+---
+title: Using Bower with Middleman
+description: Adding bower's front-end package management to a Middleman powered site.
+tags: ruby, middleman, bower
+---
 
-Created by Twitter, Bower is an open source software project, which centralises management of front-end packages and their dependencies, in a fashion similar to how bundler manages gem dependencies for Ruby.
-
+Created by Twitter, [Bower](https://github.com/bower/bower) is an open source software project, which centralises management of front-end packages and their dependencies, in a fashion similar to how bundler manages gem dependencies for Ruby.
+READMORE
 ## Getting started with Bower
 
 Bower is hosted on GitHub, and, assuming that you have git, node, and npm installed, can be installed with:
@@ -17,7 +21,7 @@ bower init
 ~~~
 
 ## Installing Packages
-Once you have initialised Bower, you can begin to add packages. This site currently uses unison.js and jquery-pjax, so, let their installation be managed by bower:
+Once you have initialised Bower, you can begin to add packages. This site currently uses [unison.js](http://bjork24.github.io/Unison/) and [jquery-pjax](https://github.com/defunkt/jquery-pjax), so, let their installation be managed by bower:
 
 ~~~shell
 bower install unison --save
@@ -75,4 +79,4 @@ Now that Sprockets is aware of our bower_components directory, we can include ou
 
 This will now include our selected components as part of the javascript file when we build the project next.
 
-An example of this in action can be found in the git repository for this site on Github.
+An example of this in action can be found in the git repository [for this site on Github](https://github.com/FearMediocrity/fearmediocrity.co.uk).
