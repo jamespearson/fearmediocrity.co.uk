@@ -1,0 +1,21 @@
+html{
+
+  body{
+
+    > .secondary{
+      @include clearfix;
+
+      > article{
+        float: left;
+      }
+
+
+      @include medium{
+
+        > article{
+            width: 50%;
+        }
+      }
+    }
+  }
+}

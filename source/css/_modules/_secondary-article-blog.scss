@@ -1,0 +1,21 @@
+html{
+
+  body{
+
+    > .secondary{
+      @include clearfix;
+
+      > article.blog{
+
+      }
+
+
+      @include medium{
+
+        > article.blog{
+          background: red;
+        }
+      }
+    }
+  }
+}

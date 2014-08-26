@@ -40,6 +40,9 @@ activate :deploy do |deploy|
   deploy.user = "root"
 end
 
+activate :directory_indexes
+
+
 activate :livereload
 
 activate  :syntax,

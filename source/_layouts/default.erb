@@ -51,7 +51,27 @@
 </head>
 <body class="<%= page_classes + " #{yield_content(:page_class) if content_for?(:page_class)} " %>">
 
-    <%= yield %>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="/" title="Return to the homepage">Home</a></li>
+            <li><a href="/about/" title="Find out more about James Pearson">About</a></li>
+            <li><a href="/work/" title="See examples of James Pearson's work">Work</a></li>
+            <li><a href="/blog/" title="Read James Pearson's blog">Blog</a></li>
+            <li><a href="/contact/" title="Contact James Pearson">Contact</a></li>
+          </ul>
+        </nav>
+
+        <%= partial "social" %>
+    </header>
+
+    <section class="primary">
+        <%= yield_content :primary %>
+    </section>
+
+    <section class="secondary">
+        <%= yield_content :secondary %>
+    </section>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>

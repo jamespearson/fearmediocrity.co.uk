@@ -1,0 +1,21 @@
+html{
+
+  body{
+
+    > .primary {
+    }
+
+    @include medium {
+
+      > .primary {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: 90px;
+        width: 50%;
+
+        background: green;
+      }
+    }
+  }
+}

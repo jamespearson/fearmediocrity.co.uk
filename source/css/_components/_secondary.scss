@@ -1,0 +1,20 @@
+html{
+
+  body{
+
+    > .secondary {
+    }
+
+    @include medium {
+
+      > .secondary {
+        background: blue;
+        float: right;
+        margin-top: 90px;
+
+        min-height: 200px;
+        width: 50%;
+      }
+    }
+  }
+}
