@@ -1,18 +1,11 @@
-@import 'bourbon/bourbon';
-
-@import "breakpoints";
-
+@import "_vendor/normalize";
+@import "_vendor/h5bp";
+@import "utils";
 
 @import "colors";
 
 @import "typography";
-@import "icons";
 @import "mixins";
-@import "variables";
-
-@import "media-queries";
-
-@import "normalize";
 
 @import "code_highlight";
 
@@ -35,154 +28,19 @@ html, body{
   min-width: 100%;
 }
 
-
 a, a:focus, a:link, a:active, a:visited, img{
   outline: none;
   text-decoration: none;
 }
 
-img{
-  max-width: 100%;
-}
-html{
-  background: #ededed;
 
-  body{
+html {
+  font-size: 10px;
+
+  body {
+    @include baseline-grid();
+
     position: relative;
 
-    .container{
-      @include font-size(1.4);
-
-      > header{
-        background: $mine_shaft;
-
-        > a{
-          @include title_font;
-
-          color: $white;
-          text-transform: uppercase;
-
-          .avatar{
-            background: transparent 50% 50% no-repeat;
-            border: 3px solid rgba(255,255,255, 0.8);
-            border-radius: 100px;
-            display: block;
-          }
-        }
-        p{
-          color: rgba($white, 0.6);
-
-          a{
-            color: rgba($white, 0.8);
-            text-decoration: underline;
-          }
-        }
-
-      }
-
-      > .main{
-
-        article{
-          margin-bottom: 30px;
-
-          &:after{
-            border-bottom: 1px solid rgba($mine_shaft, 0.2);
-            content: " ";
-            display: block;
-            margin: 30px auto 0;
-            width: 100%;
-          }
-
-          &:last-child{
-            &:after{
-              display: none;
-            }
-          }
-
-          a{
-            color: $mine_shaft;
-            text-decoration: underline;
-          }
-
-          > header{
-            @include title_font;
-
-            h1{
-              @include font-size(2.4, 2.5);
-              margin: 0;
-            }
-
-            h2{
-              margin: 0;
-
-              a{
-                text-decoration: none;
-              }
-            }
-
-            p{
-              margin: 0;
-              color: rgba($mine_shaft, 0.6);
-              a{
-                color: rgba($mine_shaft, 0.6);
-              }
-            }
-          }
-
-          .body{
-
-            h2{
-              border-bottom: 1px solid rgba($mine_shaft, 0.2);
-              padding-bottom: 10px;
-            }
-            p{
-              img{
-                display: block;
-                margin-bottom: 10px;
-              }
-            }
-
-          }
-
-          &.article-list{
-
-            > header{
-
-              h2{
-                margin: 0;
-
-                a{
-                  @include font-size(2.4, 2.5);
-                  color: $mine_shaft;
-                }
-              }
-            }
-            .body{
-              p{
-
-              }
-            }
-          }
-        }
-      }
-
-
-      > footer{
-        p{
-
-        }
-      }
-
-    }
   }
 }
-
-
-
-@import "breakpoints/_1-x-small";
-@import "breakpoints/_2-small";
-@import "breakpoints/_3-small_medium";
-@import "breakpoints/_4-medium";
-@import "breakpoints/_5-large-medium";
-@import "breakpoints/_6-large";
-@import "breakpoints/_7-xlarge";

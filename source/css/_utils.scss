@@ -1,0 +1,87 @@
+
+/*==========  MIXINS  ==========*/
+
+  @mixin media-query($media-query) {
+    @if $media-query == small {
+      @media only screen and (max-width:$medium - 1) { @content; }
+    }
+
+    @if $media-query == medium {
+      @media only screen and (min-width:$medium) { @content; }
+    }
+
+    @if $media-query == medium-only {
+      @media only screen and (min-width:$medium) and (max-width: $wide - 1) { @content; }
+    }
+
+    @if $media-query == wide {
+      @media only screen and (min-width:$wide) { @content; }
+    }
+
+    @if $media-query == huge {
+      @media only screen and (min-width:$huge) { @content; }
+    }
+  }
+
+  // Just some helpers...
+  @mixin small-only { @include media-query(small) { @content }; }
+  @mixin medium { @include media-query(medium) { @content }; }
+  @mixin medium-only { @include media-query(medium-only) { @content }; }
+  @mixin wide { @include media-query(wide) { @content }; }
+  @mixin huge { @include media-query(huge) { @content }; }
+
+  // Mixin to constrain elements
+  @mixin container($isRelative: false) {
+    box-sizing: content-box;
+
+    @if $isRelative {
+      position: relative;
+    }
+
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    @include medium {
+      padding-left: 4.8%;
+      padding-right: 4.8%;
+      max-width: $mediumContainer;
+    }
+
+    @include wide {
+      padding-left: 4.4%;
+      padding-right: 4.4%;
+      max-width: $wideContainer;
+    }
+  }
+
+
+
+  // Mixin to show a baseline grid
+  // only visible when body has 'debug' class
+  @mixin baseline-grid() {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      z-index: 9;
+
+      display: none;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 95%,rgba(0,0,0,0.15) 100%);
+
+      background-size: 100% 26px;
+    }
+
+    &.debug::after {
+      display: block;
+      pointer-events: none;
+    }
+  }
