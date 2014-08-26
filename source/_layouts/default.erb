@@ -50,31 +50,11 @@
 
 </head>
 <body class="<%= page_classes + " #{yield_content(:page_class) if content_for?(:page_class)} " %>">
-    <div class="container">
 
-      <header>
-        <a href="/" title="Return to the home page">
-          <span class="avatar"></span>
-          <p>James Pearson <span>Web Developer</span></p>
-        </a>
+    <%= yield %>
 
-        <%= partial "social" %>
-
-        <p>I'm a web developer based in Milton Keynes, England. I currently work at <a href="http://somewhat.cc">Somewhat</a> as Director of Technology, primarily working with Ruby on Rails.</p>
-
-      </header>
-
-      <div id="main" role="main" class="main <%=yield_content(:main_class) %>">
-        <%= yield %>
-      </div>
-
-      <footer>
-        <p class="copyright">&copy; 2014 - James Pearson</p>
-      </footer>
-    </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 
     <%=javascript_include_tag "main" %>
 
