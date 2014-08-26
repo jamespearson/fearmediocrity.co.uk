@@ -10,6 +10,7 @@ gem "middleman", "~>3.1.5"
 gem "middleman-deploy"
 gem 'middleman-autoprefixer'
 gem "middleman-blog", "~> 3.2.0"
+gem "middleman-livereload"
 gem "middleman-minify-html"
 gem 'middleman-smusher'
 gem "middleman-syntax"

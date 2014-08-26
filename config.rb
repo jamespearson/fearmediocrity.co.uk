@@ -40,6 +40,8 @@ activate :deploy do |deploy|
   deploy.user = "root"
 end
 
+activate :livereload
+
 activate  :syntax,
           :element => "pre>code"
 
