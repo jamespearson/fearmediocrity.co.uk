@@ -13,23 +13,24 @@ articles <<
 
 <% content_for :secondary do %>
 
-    <%
-       @articles = []
+    <% page_articles.each do |article| %>
 
-       sitemap.resources.each do |page|
-         next unless page.data["sort_date"].present?
 
-         @articles << page
 
-       end
-    %>
+        <article>
+          <%=article.data.layout%>
+          <header>
+            <h2><%= link_to article.title, article %></h2>
+            <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
+              <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
+            </p>
+          </header>
 
-    <% @articles.sort!{ |x,y| y.data["sort_date"] <=> x.data["sort_date"] } %>
+          <div class="body">
+            <p><%=article.summary%></p>
+          </div>
 
-    <% @articles.each do |article| %>
+        </article>
 
-        <% render "". locals: {article: article} if page.url =~ /^(\/work\/)/ %>
-
-        <% render "" if page.url =~ /^(\/2014\/)/ %>
     <% end %>
 <% end %>
