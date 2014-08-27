@@ -1,8 +1,10 @@
 ---
 title: Hospitality | Chelsea Football Club
 description: Sample article description.
-tags: office, equipment
-sort_date: 2014-02-01
+tags: work, equipment
+layout: work
+client: Chelsea F.C.
+work_title: Hospitality App
 ---
 
 CFC

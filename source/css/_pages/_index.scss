@@ -1,0 +1,13 @@
+html{
+
+  body{
+
+    &.index{
+
+      > .primary{
+        background: transparent url(/img/index-primary-desktop.jpg) 50% 50% no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

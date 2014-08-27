@@ -1,0 +1,19 @@
+
+<article class="work <%=article.slug%>">
+
+  <header>
+    <h2>
+        <span><%=article.data.client%></span>
+        <span><%=article.data.work_title%></span>
+    </h2>
+
+  </header>
+
+  <footer>
+
+    <div>Work</div>
+    <div><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%></div>
+
+  </footer>
+
+</article>

@@ -1,5 +1,5 @@
 ---
-title: Tools for web development - Office Setup
+title: Web Developer Office Setup
 description: Sample article description.
 tags: office, equipment
 layout: blog

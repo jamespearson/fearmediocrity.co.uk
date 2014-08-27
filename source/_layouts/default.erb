@@ -44,7 +44,8 @@
 
   <%= feed_tag :atom, "/feed.xml", :title => "All" %>
 
-  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+  <script type="text/javascript" src="//use.typekit.net/hnz4une.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <%=stylesheet_link_tag "main" %>
 
@@ -52,6 +53,9 @@
 <body class="<%= page_classes + " #{yield_content(:page_class) if content_for?(:page_class)} " %>">
 
     <header>
+
+        <p>James Pearson</p>
+
         <nav>
           <ul>
             <li><a href="/" title="Return to the homepage">Home</a></li>

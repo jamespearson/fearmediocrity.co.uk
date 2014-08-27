@@ -43,6 +43,7 @@ html {
   body {
     @include baseline-grid();
 
+    background: #dbdbdb;
     position: relative;
     margin: 0;
     min-height: 100%;
@@ -57,3 +58,7 @@ html {
 
 @import "_modules/secondary-article";
 @import "_modules/secondary-article-blog";
+@import "_modules/secondary-article-work";
+
+
+@import "_pages/index";

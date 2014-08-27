@@ -14,23 +14,6 @@ articles <<
 <% content_for :secondary do %>
 
     <% page_articles.each do |article| %>
-
-
-
-        <article>
-          <%=article.data.layout%>
-          <header>
-            <h2><%= link_to article.title, article %></h2>
-            <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
-              <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
-            </p>
-          </header>
-
-          <div class="body">
-            <p><%=article.summary%></p>
-          </div>
-
-        </article>
-
+        <%=partial "secondary-article-#{article.data.layout}", locals: {article: article} %>
     <% end %>
 <% end %>
