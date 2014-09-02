@@ -6,8 +6,20 @@ I18n.enforce_available_locales = false
 ###
 
 # Time.zone = "UTC"
-#
+
+
+
+activate :blog do |blog|
+  blog.name = "work"
+  blog.layout = "work"
+  blog.default_extension = ".md"
+  blog.sources = "posts/work/:year-:month-:day-:title.html"
+end
+
+
+# Blog posts
 activate  :blog do |blog|
+  blog.name = "blog"
   # blog.prefix = "blog"
   blog.permalink = ":year/:month/:day/:title/index.html"
   # blog.sources = ":year-:month-:day-:title.html"
@@ -21,7 +33,7 @@ activate  :blog do |blog|
   # blog.day_link = ":year/:month/:day.html"
   blog.default_extension = ".md"
 
-  blog.sources = "posts/:year-:month-:day-:title.html"
+  blog.sources = "posts/blog/:year-:month-:day-:title.html"
 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
@@ -46,9 +58,9 @@ activate :directory_indexes
 
 
 activate :livereload
-
-activate  :syntax,
-          :element => "pre>code"
+#
+# activate  :syntax,
+#           :element => "pre>code"
 
 
 page "/google152d413d2b447042.html", :directory_index => false
