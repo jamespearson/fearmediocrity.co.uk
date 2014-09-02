@@ -31,6 +31,8 @@ activate  :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
+activate :autoprefixer
+
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = "fearmediocrity.co.uk"
