@@ -1,0 +1,120 @@
+html{
+
+  body{
+
+    &.work{
+
+      > header{
+        border-bottom: 3px solid rgba($white, 0.5);
+        padding-top: 40px;
+        margin-bottom: 20px;
+        h1{
+          margin: 0;
+
+          span{
+            @include font-size(4.0);
+            color: $white;
+
+            display: block;
+            padding: 0 60px;
+            margin: 0;
+            text-align: center;
+
+            &:first-child{
+              @include font-size(2.6);
+              color: rgba($white, 0.5);
+
+            }
+          }
+        }
+
+        p{
+          @include font-size(1.6);
+          color: rgba($white, 0.5);
+          margin: 0;
+
+          a{
+
+            color: $white;
+            background: rgba($white, 0.25);
+            padding: 0 5px;
+          }
+        }
+      }
+
+      > div{
+        &.masthead{
+          background: transparent url(/img/work/cant-help-my-selfie/masthead.jpg) 50% 0% no-repeat;
+          background-size: 680px 225px;
+          padding-bottom: 33%;
+          opacity: 0.5;
+        }
+
+
+        &.body{
+          margin-top: 20px;
+          border-top: 3px solid rgba($white,0.5);
+
+        }
+
+        &.gallery{
+          @include clearfix;
+
+
+          ul{
+            @include inline_list;
+            padding-top: 10px;
+
+            li{
+              color: transparent;
+              font-size: 0;
+              margin: 0 10px;
+              width: 155px;
+
+              &:first-child{
+                margin-left: 0;
+              }
+
+              &:last-child{
+                margin-right: 0;
+              }
+
+              a{
+                background: pink;
+                display: block;
+                height: 155px;
+                opacity: 0.5;
+              }
+            }
+
+          }
+        }
+
+        h2{
+          border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+          padding: 20px 0;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.8rem;
+          line-height: 1;
+        }
+      }
+
+
+    }
+
+
+
+    &.cant-help-my-selfie{
+      > .gallery{
+        > ul{
+          > li{
+            &:nth-child(1){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(2){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(3){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(4){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+          }
+        }
+      }
+    }
+  }
+}

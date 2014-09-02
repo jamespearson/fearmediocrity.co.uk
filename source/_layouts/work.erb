@@ -1,0 +1,41 @@
+
+<% article = current_article %>
+
+<% content_for :page_class do %>
+    work <%=article.slug%>
+<% end %>
+
+<% content_for :header do %>
+
+    <h1>
+        <span><%=article.data.client%></span>
+        <span><%=article.data.work_title%></span>
+    </h1>
+
+    <p>whilst working with <a href="http://somewhat.cc" rel="nofollow">Somewhat</a></p>
+
+<% end %>
+
+<% wrap_layout :default do %>
+
+    <div class="masthead">
+
+    </div>
+
+    <div class="body">
+      <%=yield%>
+    </div>
+
+
+    <div class="gallery">
+
+      <h2>Project Gallery</h2>
+      <ul>
+        <li><a href="#" title>Title 1</a></li>
+        <li><a href="#">Title 1</a></li>
+        <li><a href="#">Title 1</a></li>
+        <li><a href="#">Title 1</a></li>
+      </ul>
+
+    </div>
+<% end %>
