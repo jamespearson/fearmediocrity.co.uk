@@ -4,6 +4,14 @@ pageable: true
 per_page: 10
 ---
 
+<% content_for :header do %>
+    <p>
+      <span>Hello, my name is James.</span>
+      <span>I am a passionate Ruby on Rails Developer with over 10 years experience</span>
+    </p>
+
+    <%= partial "social" %>
+<% end %>
 
 <section class="summary summary-blog">
 
