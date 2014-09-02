@@ -6,57 +6,62 @@
   font-family: "bebas-neue",serif;
   font-weight: 300;
 }
-
-@charset "UTF-8";
-
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello.eot?84168755');
+  src: url('/fonts/fontello.eot?84168755#iefix') format('embedded-opentype'),
+  url('/fonts/fontello.woff?84168755') format('woff'),
+  url('/fonts/fontello.ttf?84168755') format('truetype'),
+  url('/fonts/fontello.svg?84168755#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
-* Symbolset
-* www.symbolset.com
-* Copyright © 2013 Oak Studios LLC
-*
-* Upload this file to your web server
-* and place this within your <head> tags.
-* <link href="webfonts/ss-social-regular.css" rel="stylesheet" />
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?84168755#fontello') format('svg');
+  }
+}
 */
 
-@font-face {
-  font-family: "SSSocialCircle";
-  src: url('/fonts/ss-social-regular.eot');
-  src: url('/fonts/ss-social-regular.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/ss-social-regular.woff') format('woff'),
-  url('/fonts/ss-social-regular.ttf')  format('truetype'),
-  url('/fonts/ss-social-regular.svg#SSSocialCircle') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
-html:hover [class^="ss-"]{-ms-zoom: 1;}
-
-.ss-icon, .ss-icon.ss-social-regular,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"].ss-social-regular:before, [class*=" ss-"].ss-social-regular:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"].ss-social-regular.right:after, [class*=" ss-"].ss-social-regular.right:after {
-  font-family: "SSSocialCircle";
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  text-decoration: none;
-  text-rendering: optimizeLegibility;
-  white-space: nowrap;
-  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  -o-font-feature-settings: "liga";
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-[class^="ss-"].right:before,
-[class*=" ss-"].right:before{display:none;content:'';}
-
-.ss-facebook:before,.ss-facebook.right:after{content:''}.ss-twitter:before,.ss-twitter.right:after{content:''}.ss-linkedin:before,.ss-linkedin.right:after{content:''}.ss-googleplus:before,.ss-googleplus.right:after{content:''}.ss-appdotnet:before,.ss-appdotnet.right:after{content:''}.ss-zerply:before,.ss-zerply.right:after{content:''}.ss-reddit:before,.ss-reddit.right:after{content:''}.ss-steam:before,.ss-steam.right:after{content:''}.ss-tumblr:before,.ss-tumblr.right:after{content:''}.ss-wordpress:before,.ss-wordpress.right:after{content:''}.ss-blogger:before,.ss-blogger.right:after{content:''}.ss-posterous:before,.ss-posterous.right:after{content:''}.ss-quora:before,.ss-quora.right:after{content:''}.ss-youtube:before,.ss-youtube.right:after{content:''}.ss-vimeo:before,.ss-vimeo.right:after{content:''}.ss-vine:before,.ss-vine.right:after{content:''}.ss-letterboxd:before,.ss-letterboxd.right:after{content:''}.ss-flickr:before,.ss-flickr.right:after{content:''}.ss-instagram:before,.ss-instagram.right:after{content:''}.ss-500px:before,.ss-500px.right:after{content:''}.ss-etsy:before,.ss-etsy.right:after{content:''}.ss-pinterest:before,.ss-pinterest.right:after{content:''}.ss-svpply:before,.ss-svpply.right:after{content:''}.ss-readmill:before,.ss-readmill.right:after{content:''}.ss-dropbox:before,.ss-dropbox.right:after{content:''}.ss-pinboard:before,.ss-pinboard.right:after{content:''}.ss-delicious:before,.ss-delicious.right:after{content:''}.ss-dribbble:before,.ss-dribbble.right:after{content:''}.ss-behance:before,.ss-behance.right:after{content:''}.ss-github:before,.ss-github.right:after{content:''}.ss-octocat:before,.ss-octocat.right:after{content:''}.ss-stackoverflow:before,.ss-stackoverflow.right:after{content:''}.ss-paypal:before,.ss-paypal.right:after{content:''}.ss-kickstarter:before,.ss-kickstarter.right:after{content:''}.ss-foursquare:before,.ss-foursquare.right:after{content:''}.ss-yelp:before,.ss-yelp.right:after{content:''}.ss-skype:before,.ss-skype.right:after{content:''}.ss-rdio:before,.ss-rdio.right:after{content:''}.ss-spotify:before,.ss-spotify.right:after{content:''}.ss-lastfm:before,.ss-lastfm.right:after{content:''}.ss-soundcloud:before,.ss-soundcloud.right:after{content:''}.ss-link:before,.ss-link.right:after{content:'🔗'}.ss-phone:before,.ss-phone.right:after{content:'📞'}.ss-mail:before,.ss-mail.right:after{content:'✉'}.ss-like:before,.ss-like.right:after{content:'👍'}.ss-rss:before,.ss-rss.right:after{content:''}.ss-share:before,.ss-share.right:after{content:''}.ss-apple:before,.ss-apple.right:after{content:''}.ss-microsoft:before,.ss-microsoft.right:after{content:''}.ss-windows:before,.ss-windows.right:after{content:''}.ss-android:before,.ss-android.right:after{content:''}.ss-blackberry:before,.ss-blackberry.right:after{content:''}
-
-/* Legacy */
-.ss-fivehundredpx:before,.ss-fivehundredpx.right:after{content:''}
+.icon-home:before { content: '\e800'; } /* '' */
+.icon-linkedin:before { content: '\e801'; } /* '' */
+.icon-twitter:before { content: '\e802'; } /* '' */
+.icon-skype:before { content: '\e803'; } /* '' */
+.icon-github:before { content: '\e804'; } /* '' */
+.icon-gplus:before { content: '\e805'; } /* '' */
+.icon-mail:before { content: '\e806'; } /* '' */
