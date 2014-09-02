@@ -2,7 +2,7 @@
 title: Web Developer Office Setup
 description: Sample article description.
 tags: office, equipment
-layout: blog
+layout: article
 ---
 Inspired by [Scott Hanselman's 2014 Ultimate Developer and Power Users Tool List for Windows](http://www.hanselman.com/tools), I've decided to document the tool I use on a daily basis, starting with my office setup.
 READMORE
