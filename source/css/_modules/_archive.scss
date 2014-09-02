@@ -1,0 +1,31 @@
+html {
+
+  body {
+
+    &.archive {
+
+      .summary{
+        @include clearfix;
+
+        &:last-of-type{
+          padding-bottom: 0;
+        }
+
+        > a{
+          margin: 0 10px;
+          width: 320px;
+
+          &:nth-child(even){
+            float: left;
+            margin-left: 0;
+          }
+
+          &:nth-child(odd){
+            float: right;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
