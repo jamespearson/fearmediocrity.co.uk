@@ -50,16 +50,10 @@
   <%=stylesheet_link_tag "main" %>
 
 </head>
-<body class="<%= page_classes + " #{yield_content(:page_class) if content_for?(:page_class)} " %>">
+<body class="<%= content_for?(:page_class) ? yield_content(:page_class) : page_classes %>">
 
     <header>
-
-        <p>
-          <span>Hello, my name is James.</span>
-          <span>I am a passionate Ruby on Rails Developer with over 10 years experience</span>
-        </p>
-
-        <%= partial "social" %>
+	<%= yield_content :header %>
     </header>
 
     <%= yield %>
