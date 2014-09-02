@@ -1,0 +1,33 @@
+---
+layout: default
+pageable: true
+per_page: 10
+---
+
+<% content_for :page_class do %>
+    archive work_index
+<% end %>
+
+<% content_for :header do %>
+    <p>
+      <span>Hello, my name is James.</span>
+      <span>I am a passionate Ruby on Rails Developer with over 10 years experience</span>
+    </p>
+
+    <%= partial "social" %>
+<% end %>
+
+<% (Time.now.year).downto(2014) do |year| %>
+    <section class="summary summary-work">
+
+      <header>
+        <h2><%=year%></h2>
+      </header>
+
+      <% page_articles('work').select{|resource| resource.date.year == year }.each do |article| %>
+          <%=partial "article-summary-work", locals: {article: article} %>
+      <% end %>
+
+    </section>
+<% end %>
+
