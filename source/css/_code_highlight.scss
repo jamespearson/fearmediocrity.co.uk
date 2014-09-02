@@ -2,6 +2,8 @@ html{
   body{
     > div{
       .highlight {
+        @include font-size(1.4);
+
         padding: 20px;
         table {
           border-spacing: 0;
@@ -143,7 +145,7 @@ html{
         .w {
           color: #bbbbbb;
         }
-        background-color: #f8f8f8;
+        background-color: rgba($white, 0.5);
       }
     }
   }
