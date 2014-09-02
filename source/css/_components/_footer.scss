@@ -1,0 +1,66 @@
+html{
+  body{
+    > footer{
+      @include font-size(1.4);
+
+      float: left;
+      padding-bottom: 40px;
+      width: 100%;
+
+      > header{
+        border-bottom: 2px solid rgba($white, 0.5);
+        margin: 20px 0;
+
+        h3 {
+          @include font-size(1.8);
+          color: rgba($white, 0.5);
+          line-height: 1;
+        }
+      }
+
+      >p{
+        color: #e5e5e5;
+        margin: 20px 0;
+      }
+
+      > div {
+        float: left;
+        width: 48%;
+
+        &:last-child{
+          float: right;
+        }
+
+        label{
+          display: none;
+        }
+
+        input[type=text],
+        input[type=email],
+        textarea{
+          border: 0;
+          padding: 10px;
+          margin-bottom: 20px;
+          opacity: 0.5;
+          width: 100%;
+
+          &:focus{
+            opacity: 1;
+          }
+
+        }
+
+        textarea{
+          height: 100px;
+          resize: none;
+        }
+
+        input[type=submit]{
+          @extend .button;
+          background: transparent;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

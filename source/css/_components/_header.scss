@@ -1,44 +1,14 @@
 html{
     body{
         > header{
-            background: $white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 90px;
-            margin: 0;
-            padding: 0;
-            z-index: 10;
+          padding-bottom: 20px;
 
-            > p{
-              @include font-size(3.0, 1.0);
-              position: absolute;
-              left: 20px;
-              margin: 0;
-              top: 50%;
-              transform: translateY(-50%);
-            }
+          p{
+            @include font-size(4.0);
+            color: $white;
 
-            > nav{
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-
-              ul{
-                @include inline-list;
-
-                li{
-
-                  a{
-                    display: block;
-                    padding: 16px;
-                    text-transform: uppercase;
-                  }
-                }
-              }
-            }
+            text-align: center;
+          }
         }
     }
 }

@@ -54,28 +54,42 @@
 
     <header>
 
-        <p>James Pearson</p>
-
-        <nav>
-          <ul>
-            <li><a href="/" title="Return to the homepage">Home</a></li>
-            <li><a href="/about/" title="Find out more about James Pearson">About</a></li>
-            <li><a href="/work/" title="See examples of James Pearson's work">Work</a></li>
-            <li><a href="/blog/" title="Read James Pearson's blog">Blog</a></li>
-            <li><a href="/contact/" title="Contact James Pearson">Contact</a></li>
-          </ul>
-        </nav>
+        <p>
+          <span>Hello, my name is James.</span>
+          <span>I am a passionate Ruby on Rails Developer with over 10 years experience</span>
+        </p>
 
         <%= partial "social" %>
     </header>
 
-    <section class="primary">
-        <%= yield_content :primary %>
-    </section>
+    <%= yield %>
 
-    <section class="secondary">
-        <%= yield_content :secondary %>
-    </section>
+    <footer>
+
+      <header>
+        <h3>Contact</h3>
+      </header>
+
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. </p>
+
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name" />
+
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Your email" />
+      </div>
+
+      <div>
+        <label>Message</label>
+        <textarea placeholder="Your message"></textarea>
+
+        <input type="submit" value="Send Message" />
+      </div>
+
+
+
+    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
