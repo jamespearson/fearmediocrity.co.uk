@@ -26,6 +26,10 @@ html, body{
   margin: 0;
   padding: 0;
 
+  p{
+    @include font-size(1.4);
+    color: $body_paragraph;
+  }
 }
 
 a, a:focus, a:link, a:active, a:visited, img{
@@ -77,3 +81,4 @@ html {
 
 
 @import "_pages/index";
+@import "_pages/work";
