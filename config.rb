@@ -15,12 +15,6 @@ activate :blog do |blog|
   blog.default_extension = ".md"
   blog.permalink = "work/:title/index.html"
   blog.sources = "posts/work/:year-:month-:day-:title.html"
-  blog.year_link = "work/:year/index.html"
-  blog.month_link = "work/:year/:month/index.html"
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
-
-
 end
 
 
