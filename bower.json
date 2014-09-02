@@ -17,6 +17,6 @@
   "dependencies": {
     "jquery": "latest",
     "jquery-pjax": "latest",
-    "masonry": "latest"
+    "matchHeight": "latest"
   }
 }

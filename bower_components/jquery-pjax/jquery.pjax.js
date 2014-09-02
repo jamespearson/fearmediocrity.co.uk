@@ -538,7 +538,7 @@ function stripPjaxParam(url) {
     .replace(/[\?&]$/, '')
 }
 
-// Internal: Parse URL _components and returns a Locationish object.
+// Internal: Parse URL components and returns a Locationish object.
 //
 // url - String URL
 //
