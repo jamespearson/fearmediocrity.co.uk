@@ -4,6 +4,24 @@ html {
 
     &.archive {
 
+      > header{
+        padding-top: 40px;
+
+
+        h1{
+          margin: 0;
+
+          span{
+            @include font-size(4.0);
+            color: $white;
+
+            display: block;
+            padding: 0 60px;
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
       .summary{
         @include clearfix;
 
