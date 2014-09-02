@@ -1,0 +1,100 @@
+html {
+
+  body {
+
+    &.content {
+
+      > header{
+        border-bottom: 3px solid rgba($white, 0.5);
+        padding-top: 40px;
+        margin-bottom: 20px;
+        h1{
+          margin: 0;
+
+          span{
+            @include font-size(4.0);
+            color: $white;
+
+            display: block;
+            padding: 0 60px;
+            margin: 0;
+            text-align: center;
+
+            &:first-child{
+              @include font-size(2.6);
+              color: rgba($white, 0.5);
+
+            }
+          }
+        }
+
+        p{
+          @include font-size(1.6);
+          color: rgba($white, 0.5);
+          margin: 0;
+
+          a{
+
+            color: $white;
+            background: rgba($white, 0.25);
+            padding: 0 5px;
+          }
+        }
+      }
+
+
+      > div{
+
+
+        h2{
+          border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+          padding: 20px 0;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.8rem;
+          line-height: 1;
+        }
+
+        h3{
+          margin: 0;
+          padding: 20px 0;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.6rem;
+          line-height: 1;
+        }
+
+        h4{
+          margin: 0;
+          padding: 10px 0;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.4rem;
+          line-height: 1;
+        }
+
+        p{
+
+          > a{
+            background: rgba($white, 0.5);
+            color: $white;
+            padding: 0 3px;
+          }
+
+          > img{
+            display: block;
+            margin: 0 auto 10px;
+          }
+        }
+
+        ul{
+          margin: 0;
+          li{
+            @include font-size(1.4);
+            color: $body_paragraph;
+
+          }
+        }
+
+
+      }
+    }
+  }
+}

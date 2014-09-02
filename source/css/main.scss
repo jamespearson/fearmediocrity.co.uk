@@ -75,10 +75,9 @@ html {
 @import "_components/summary-blog";
 @import "_components/summary-work";
 
-
-
+@import "_modules/content";
 @import "_modules/social";
 
-
+@import "_pages/article";
 @import "_pages/index";
 @import "_pages/work";
