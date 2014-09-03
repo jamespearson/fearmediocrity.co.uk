@@ -23,42 +23,44 @@ html{
         margin: 20px 0;
       }
 
-      > div {
-        float: left;
-        width: 48%;
+      > form {
+        > div {
+          float: left;
+          width: 48%;
 
-        &:last-child{
-          float: right;
-        }
-
-        label{
-          display: none;
-        }
-
-        input[type=text],
-        input[type=email],
-        textarea{
-          border: 0;
-          padding: 10px;
-          margin-bottom: 20px;
-          opacity: 0.5;
-          width: 100%;
-
-          &:focus{
-            opacity: 1;
+          &:last-child {
+            float: right;
           }
 
-        }
+          label {
+            display: none;
+          }
 
-        textarea{
-          height: 100px;
-          resize: none;
-        }
+          input[type=text],
+          input[type=email],
+          textarea {
+            border: 0;
+            padding: 10px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+            width: 100%;
 
-        input[type=submit]{
-          @extend .button;
-          background: transparent;
-          width: 100%;
+            &:focus {
+              opacity: 1;
+            }
+
+          }
+
+          textarea {
+            height: 100px;
+            resize: none;
+          }
+
+          input[type=submit] {
+            @extend .button;
+            background: transparent;
+            width: 100%;
+          }
         }
       }
     }
