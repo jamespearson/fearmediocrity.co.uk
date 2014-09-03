@@ -44,7 +44,12 @@ activate  :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
-activate :autoprefixer
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
+  config.cascade  = false
+  config.inline   = true
+  config.ignore   = ['hacks.css']
+end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
