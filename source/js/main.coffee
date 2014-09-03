@@ -6,5 +6,10 @@
 
 #= require "matchHeight/jquery.matchHeight-min.js"
 
+#= require "google-analytics-events"
+
+
 $ ->
-  $('body.index .summary').matchHeight();
+
+  if $('body').width() >= 650
+    $('body.index .summary').matchHeight();
