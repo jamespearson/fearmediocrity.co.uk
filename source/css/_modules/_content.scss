@@ -95,6 +95,58 @@ html {
 
 
       }
+
+
+      @include small-only{
+
+        > header{
+
+          h1{
+            span{
+              @include font-size(3.0);
+              color: $white;
+              padding: 0 20px;
+
+              &:first-child{
+                @include font-size(2.0);
+              }
+            }
+          }
+
+          p{
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+          }
+        }
+
+        > div {
+
+          h2,
+          h3,
+          h4{
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          p {
+            @include font-size(1.8);
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+
+          img{
+            max-width: 100%;
+          }
+
+          ul{
+            li{
+              @include font-size(1.8);
+            }
+          }
+        }
+      }
+
+
     }
   }
 }

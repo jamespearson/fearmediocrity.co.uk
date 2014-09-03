@@ -40,4 +40,30 @@
       @extend .button;
     }
   }
+
+  @include small-only {
+
+
+      border-bottom: 0;
+
+      > header{
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+      }
+
+      > article,
+      > a {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      > footer{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+  }
+
 }

@@ -31,7 +31,7 @@ html {
 
         > a{
           margin: 0 10px;
-          width: 320px;
+          width: 100%;
 
           &:nth-child(even){
             float: left;
@@ -45,12 +45,19 @@ html {
         }
       }
 
-      .summary-blog{
 
-        > article {
+      @include small-only{
 
+        .summary{
+          padding: 0 20px;
+
+          > a{
+            padding: 0;
+            overflow: hidden;
+          }
         }
       }
+
     }
   }
 }

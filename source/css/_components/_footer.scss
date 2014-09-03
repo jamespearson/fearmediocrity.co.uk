@@ -39,6 +39,8 @@ html{
           input[type=text],
           input[type=email],
           textarea {
+
+            -webkit-appearance: none;
             border: 0;
             padding: 10px;
             margin-bottom: 20px;
@@ -52,14 +54,48 @@ html{
           }
 
           textarea {
+
             height: 100px;
             resize: none;
           }
 
           input[type=submit] {
             @extend .button;
+            -webkit-appearance: none;
             background: transparent;
             width: 100%;
+          }
+        }
+      }
+    }
+
+
+    @include small-only {
+      > footer{
+
+        > header{
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        > p{
+          @include font-size(1.8);
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        > form {
+          > div {
+            padding: 0 20px;
+            width: 100%;
+
+            input[type=text],
+            input[type=email],
+            textarea{
+              @include font-size(1.8);
+            }
+
+
           }
         }
       }

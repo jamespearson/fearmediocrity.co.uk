@@ -56,6 +56,25 @@ html{
       }
 
 
+      @include small-only{
+
+        > div{
+
+          &.gallery{
+            ul{
+              padding: 20px;
+
+              li{
+                float: left;
+                margin: 5px 5px !important;
+                width: calc(50% - 10px);
+              }
+            }
+          }
+        }
+
+
+      }
     }
 
 
@@ -72,5 +91,9 @@ html{
         }
       }
     }
+
+
+
+
   }
 }

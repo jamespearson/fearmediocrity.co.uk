@@ -3,7 +3,8 @@
   > article{
 
     border-bottom: 1px solid rgba($white, 0.5);
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     > header{
       h2{
@@ -30,4 +31,23 @@
       border-bottom: 0;
     }
   }
+
+  @include small-only {
+
+    > article{
+
+      &:nth-of-type(2n){
+        border-bottom: 0
+      }
+
+      > .body{
+        > p{
+          @include font-size(1.8);
+        }
+
+      }
+    }
+
+  }
+
 }
