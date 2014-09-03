@@ -14,14 +14,18 @@ per_page: 10
     </h1>
 <% end %>
 
-<% (Time.now.year).downto(2012) do |year| %>
+<% (Time.now.year).downto(2011) do |year| %>
+    <% articles = page_articles('work').select{|resource| resource.date.year == year && resource.data.published != false } %>
+
+    <% next unless articles.present? %>
+
     <section class="summary summary-work">
 
       <header>
         <h2><%=year%></h2>
       </header>
 
-      <% page_articles('work').select{|resource| resource.date.year == year }.each do |article| %>
+      <% articles.each do |article| %>
           <%=partial "article-summary-work", locals: {article: article} %>
       <% end %>
 
