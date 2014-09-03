@@ -58,6 +58,26 @@ html {
         }
       }
 
+      @include medium{
+
+        &.work_index {
+
+          .summary {
+            > a {
+
+              width: 320px;
+
+              &:nth-of-type(odd){
+                float: left;
+              }
+
+              &:nth-of-type(even){
+                float: right;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
