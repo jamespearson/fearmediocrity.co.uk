@@ -19,6 +19,12 @@
       top: 0;
     }
 
+    &:hover{
+      &:before{
+        opacity: 1;
+      }
+    }
+
 
     &.inq-mobile{
       &:before {

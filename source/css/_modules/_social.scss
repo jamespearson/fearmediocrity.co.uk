@@ -25,10 +25,12 @@ ul.social{
         line-height: 2;
         text-align: center;
 
+
       }
 
       &:hover{
         &:before{
+
           color: rgba($white, 1);
         }
       }
