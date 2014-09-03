@@ -7,4 +7,18 @@ client: Tesco
 work_title: Academy Web App
 ---
 
-CFC
+# About this project.
+
+In late 2013, Tesco approached Somewhat with a prototype web app they had made internally for staff training. The wanted to restyle and develop the prototype in to a completed web app for roll out to their 500,000 staff.
+
+The primary platform for the web app was to be mobile devices, but tablet and desktop use was also a major factor.
+
+# My Involvement
+
+I was the lead / main developer on the project.
+
+##Ruby on Rails Application
+The system was a multilingual CMS developed using Ruby on Rails 4.1. It integrated with a database of Tesco Employee and store information to ensure limited access.
+
+##Front End Development
+Developed using the latest HTML5 and CSS3 standards the site was responsive and optimised for a short load time.
