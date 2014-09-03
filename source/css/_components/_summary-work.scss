@@ -17,11 +17,17 @@
       left: 0;
       right: 0;
       top: 0;
+      transition: all 0.5s ease-out;
+      transform-origin: 50% 50%;
+
     }
 
     &:hover{
+      
       &:before{
         opacity: 1;
+        transition: all 0.5s ease-out;
+        transform-origin: 50% 50%;
       }
     }
 

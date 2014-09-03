@@ -12,26 +12,36 @@ ul.social{
     width: 10%;
 
     a{
+      transition: all 0.5s ease-out;
+      transform-origin: 50% 50%;
       display: inline;
+      position: relative;
       text-decoration: none;
       text-align: center;
 
       &:before {
         @include font-size(2, 1);
 
-        display: block;
         color: rgba($white, 0.5);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         font-weight: normal;
-        line-height: 2;
+        line-height: 30px;
         text-align: center;
+        transition: all 0.5s ease-out;
 
 
       }
 
       &:hover{
-        &:before{
 
+        &:before{
+          @include font-size(2.5, 1);
           color: rgba($white, 1);
+          line-height: 30px;
         }
       }
 
