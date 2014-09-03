@@ -18,10 +18,19 @@ ul.social{
 
       &:before {
         @include font-size(2, 1);
+
+        display: block;
         color: rgba($white, 0.5);
         font-weight: normal;
+        line-height: 2;
         text-align: center;
 
+      }
+
+      &:hover{
+        &:before{
+          color: rgba($white, 1);
+        }
       }
 
       &[href*="twitter.com"]:before {     content: '\e802';}

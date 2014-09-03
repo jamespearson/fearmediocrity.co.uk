@@ -24,6 +24,7 @@ html{
       }
 
       > form {
+        @include clearfix;
         > div {
           float: left;
           width: 48%;
@@ -66,6 +67,10 @@ html{
             width: 100%;
           }
         }
+      }
+
+      > .social{
+        margin-top: 40px;
       }
     }
 
