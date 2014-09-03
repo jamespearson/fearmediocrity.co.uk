@@ -1,5 +1,52 @@
 ---
-layout: article_list
+layout: default
 pageable: true
 per_page: 10
 ---
+
+<% content_for :header do %>
+    <p>
+      <span>Hello, my name is James.</span>
+      <span>I am a passionate Ruby on Rails Developer with over 10 years experience</span>
+    </p>
+
+    <%= partial "social" %>
+<% end %>
+
+<section class="summary summary-blog">
+
+  <header>
+    <h2>Recent blog posts</h2>
+  </header>
+
+  <% blog_count = 0 %>
+  <% page_articles('blog').each_with_index do |article, index| %>
+      <% blog_count += 1 %>
+      <% next if blog_count > 3 %>
+      <%=partial "article-summary-blog", locals: {article: article} %>
+  <% end %>
+
+  <footer>
+    <a href="/blog/" title="Read more articles by James Pearson"><span>Read more</span></a>
+  </footer>
+
+</section>
+
+<section class="summary summary-work">
+
+  <header>
+    <h2>Recent work</h2>
+  </header>
+
+  <% work_count = 0 %>
+  <% page_articles('work').each_with_index do |article, index| %>
+      <% work_count += 1 %>
+      <% next if work_count > 4 %>
+      <%=partial "article-summary-work", locals: {article: article} %>
+  <% end %>
+
+  <footer>
+    <a href="/work/" title="See more samples of James Pearson's work"><span>See more</span></a>
+  </footer>
+
+</section>

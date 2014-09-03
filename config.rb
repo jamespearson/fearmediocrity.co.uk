@@ -6,12 +6,25 @@ I18n.enforce_available_locales = false
 ###
 
 # Time.zone = "UTC"
-#
+
+
+
+activate :blog do |blog|
+  blog.name = "work"
+  blog.layout = "work"
+  blog.default_extension = ".md"
+  blog.permalink = "work/:title/index.html"
+  blog.sources = "posts/work/:year-:month-:day-:title.html"
+end
+
+
+# Blog posts
 activate  :blog do |blog|
+  blog.name = "blog"
   # blog.prefix = "blog"
   blog.permalink = ":year/:month/:day/:title/index.html"
   # blog.sources = ":year-:month-:day-:title.html"
-  # blog.taglink = "tags/:tag.html"
+  blog.taglink = ":tag/index.html"
   blog.layout = "article"
 
   blog.summary_separator = /(READMORE)/
@@ -21,7 +34,7 @@ activate  :blog do |blog|
   # blog.day_link = ":year/:month/:day.html"
   blog.default_extension = ".md"
 
-  blog.sources = "posts/:year-:month-:day-:title.html"
+  blog.sources = "posts/blog/:year-:month-:day-:title.html"
 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
@@ -29,6 +42,13 @@ activate  :blog do |blog|
   # blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/:num"
+end
+
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
+  config.cascade  = false
+  config.inline   = true
+  config.ignore   = ['hacks.css']
 end
 
 activate :deploy do |deploy|
@@ -40,8 +60,14 @@ activate :deploy do |deploy|
   deploy.user = "root"
 end
 
-activate  :syntax,
-          :element => "pre>code"
+activate :directory_indexes
+
+
+activate :livereload
+
+activate  :syntax do |syntax|
+
+end
 
 
 page "/google152d413d2b447042.html", :directory_index => false

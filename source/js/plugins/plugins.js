@@ -20,3 +20,6 @@
         }
     }
 }());
+
+
+//= require "matchHeight/jquery.matchHeight-min.js"

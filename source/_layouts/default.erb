@@ -44,37 +44,51 @@
 
   <%= feed_tag :atom, "/feed.xml", :title => "All" %>
 
-  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+  <script type="text/javascript" src="//use.typekit.net/hnz4une.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <%=stylesheet_link_tag "main" %>
 
 </head>
-<body class="<%= page_classes + " #{yield_content(:page_class) if content_for?(:page_class)} " %>">
-    <div class="container">
+<body class="<%= content_for?(:page_class) ? yield_content(:page_class) : page_classes %>">
+
+    <header>
+        <%= yield_content :header %>
+    </header>
+
+    <%= yield %>
+
+    <footer>
 
       <header>
-        <a href="/" title="Return to the home page">
-          <span class="avatar"></span>
-          <p>James Pearson <span>Web Developer</span></p>
-        </a>
-
-        <%= partial "social" %>
-
-        <p>I'm a web developer based in Milton Keynes, England. I currently work at <a href="http://somewhat.cc">Somewhat</a> as Director of Technology, primarily working with Ruby on Rails.</p>
-
+        <h3>Contact</h3>
       </header>
 
-      <div id="main" role="main" class="main <%=yield_content(:main_class) %>">
-        <%= yield %>
-      </div>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. </p>
 
-      <footer>
-        <p class="copyright">&copy; 2014 - James Pearson</p>
-      </footer>
-    </div>
+      <form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://thinkingincode.wufoo.com/forms/zrjvnsh0chq19z/#public">
+        <input type="hidden" id="idstamp" name="idstamp" value="sUMloQxdU6MSpu08ckVQFkElH7Ph+vUGxS9dUTkS+HM=" />
+          <div>
+            <label>Name</label>
+            <input id="Field7" name="Field7" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="" required placeholder="Your name" />
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+            <label>Email</label>
+            <input id="Field3" name="Field3" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="2" required placeholder="Your email address"/>
+          </div>
+
+          <div>
+            <label>Message</label>
+            <textarea id="Field4" name="Field4" spellcheck="true" tabindex="3" onkeyup="" required placeholder="Your message"></textarea>
+
+            <input type="submit" value="Send Message" id="saveForm" name="saveForm" tabindex="4" />
+          </div>
+
+      </form>
+
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 
     <%=javascript_include_tag "main" %>
 

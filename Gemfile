@@ -6,13 +6,14 @@ gem "activesupport"
 gem 'bourbon'
 gem "builder", "~> 3.0.0"
 gem "kramdown"
-gem "middleman", "~>3.1.5"
+gem "middleman", "~>3.2"
 gem "middleman-deploy"
 gem 'middleman-autoprefixer'
-gem "middleman-blog", "~> 3.2.0"
+gem "middleman-blog", "~> 3.5.3"
+gem "middleman-livereload"
 gem "middleman-minify-html"
 gem 'middleman-smusher'
 gem "middleman-syntax"
 gem "nokogiri"
 gem "redcarpet"
-gem "sass", '~> 3.2.12'
+gem "sass"

@@ -1,0 +1,13 @@
+
+<article    >
+
+  <header>
+    <h2><%= link_to article.title, article %></h2>
+    <div><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%></div>
+  </header>
+
+  <div class="body">
+    <p><%=article.summary%></p>
+  </div>
+
+</article>

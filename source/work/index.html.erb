@@ -1,0 +1,30 @@
+---
+layout: default
+pageable: true
+per_page: 10
+---
+
+<% content_for :page_class do %>
+    archive work_index
+<% end %>
+
+<% content_for :header do %>
+    <h1>
+      <span>Work</span>
+    </h1>
+<% end %>
+
+<% (Time.now.year).downto(2012) do |year| %>
+    <section class="summary summary-work">
+
+      <header>
+        <h2><%=year%></h2>
+      </header>
+
+      <% page_articles('work').select{|resource| resource.date.year == year }.each do |article| %>
+          <%=partial "article-summary-work", locals: {article: article} %>
+      <% end %>
+
+    </section>
+<% end %>
+
