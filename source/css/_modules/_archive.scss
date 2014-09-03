@@ -7,7 +7,6 @@ html {
       > header{
         padding-top: 40px;
 
-
         h1{
           margin: 0;
 
@@ -22,6 +21,7 @@ html {
           }
         }
       }
+
       .summary{
         @include clearfix;
 
@@ -42,6 +42,13 @@ html {
             float: right;
             margin-right: 0;
           }
+        }
+      }
+
+      .summary-blog{
+
+        > article {
+
         }
       }
     }
