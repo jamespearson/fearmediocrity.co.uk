@@ -1,0 +1,99 @@
+html{
+
+  body{
+
+    &.work{
+
+
+      > div{
+        &.masthead{
+          background: transparent url(/img/work/cant-help-my-selfie/masthead.jpg) 50% 0% no-repeat;
+          background-size: 680px 225px;
+          padding-bottom: 33%;
+          opacity: 0.5;
+        }
+
+
+        &.body{
+          margin-top: 20px;
+          border-top: 3px solid rgba($white,0.5);
+        }
+
+
+        &.gallery{
+          @include clearfix;
+
+
+          ul{
+            @include inline_list;
+            padding-top: 10px;
+
+            li{
+              color: transparent;
+              font-size: 0;
+              margin: 0 10px;
+              width: 155px;
+
+              &:first-child{
+                margin-left: 0;
+              }
+
+              &:last-child{
+                margin-right: 0;
+              }
+
+              a{
+                background: pink;
+                display: block;
+                height: 155px;
+                opacity: 0.5;
+              }
+            }
+
+          }
+        }
+
+      }
+
+
+      @include small-only{
+
+        > div{
+
+          &.gallery{
+            ul{
+              padding: 20px;
+
+              li{
+                float: left;
+                margin: 5px 5px !important;
+                width: calc(50% - 10px);
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+
+
+
+    &.cant-help-my-selfie{
+      > .gallery{
+        > ul{
+          > li{
+            &:nth-child(1){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(2){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(3){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+            &:nth-child(4){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+          }
+        }
+      }
+    }
+
+
+
+
+  }
+}

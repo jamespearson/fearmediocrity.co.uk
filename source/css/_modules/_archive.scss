@@ -1,0 +1,63 @@
+html {
+
+  body {
+
+    &.archive {
+
+      > header{
+        padding-top: 40px;
+
+        h1{
+          margin: 0;
+
+          span{
+            @include font-size(4.0);
+            color: $white;
+
+            display: block;
+            padding: 0 60px;
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+
+      .summary{
+        @include clearfix;
+
+        &:last-of-type{
+          padding-bottom: 0;
+        }
+
+        > a{
+          margin: 0 10px;
+          width: 100%;
+
+          &:nth-child(even){
+            float: left;
+            margin-left: 0;
+          }
+
+          &:nth-child(odd){
+            float: right;
+            margin-right: 0;
+          }
+        }
+      }
+
+
+      @include small-only{
+
+        .summary{
+          padding: 0 20px;
+
+          > a{
+            padding: 0;
+            overflow: hidden;
+          }
+        }
+      }
+
+    }
+  }
+}

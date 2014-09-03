@@ -1,0 +1,69 @@
+.summary{
+
+  border-bottom: 2px solid rgba($white, 0.5);
+  padding-bottom: 70px;
+  position: relative;
+
+  > header {
+
+    border-bottom: 2px solid rgba($white, 0.5);
+    margin-bottom: 20px;
+
+    h2 {
+      @include font-size(1.8);
+      color: rgba($white, 0.5);
+      line-height:  1;
+    }
+  }
+
+  > article {
+    @include font-size(1.4);
+
+    .body{
+      color: $body_paragraph;
+      a{
+
+        color: $black;
+        background: rgba($white, 0.25);
+        padding: 0 5px;
+      }
+    }
+
+  }
+
+  > footer{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+
+    a{
+      @extend .button;
+    }
+  }
+
+  @include small-only {
+
+
+      border-bottom: 0;
+
+      > header{
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+      }
+
+      > article,
+      > a {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      > footer{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+  }
+
+}

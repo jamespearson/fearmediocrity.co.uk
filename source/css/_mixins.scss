@@ -64,41 +64,22 @@
 }
 
 
-.social{
 
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
+.button{
+  @include font-size(1.4);
+  border: 2px solid rgba($white, 0.5);
+  border-radius: 2px;
+  color: $white;
+  display: block;
+  height: 40px;
+  position: relative;
 
-    li{
-      display: inline-block;
-      text-align:center;
-      width: 15%;
 
-      a{
-        @extend .symbol;
-
-        display: inline;
-        text-decoration: none;
-
-        &:before {
-          @include font-size(1.6, 1);
-          color: rgba($white, 0.5);
-          font-weight: normal;
-
-        }
-
-        &[href*="twitter.com"]:before {     content: '\e800';}
-        &[href*="linkedin.com"]:before {    content: '\e802'; }
-        &[href*="plus.google.com"]:before { content: '\e801'; }
-        &[href*="github.com"]:before {      content: '\e803'; }
-        &[href*="/contact/"]:before {       content: '\e804'; }
-
-        span{
-          display: none
-        }
-      }
-    }
-
+  span{
+    position: absolute;
+    left: 50%;
+    letter-spacing: 3px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

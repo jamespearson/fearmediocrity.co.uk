@@ -1,0 +1,104 @@
+html{
+
+  body{
+
+    &.index{
+
+      > header{
+
+        p{
+          padding-top: 110px;
+
+          &:before{
+            content: "";
+            background: transparent url(http://www.gravatar.com/avatar/a58170770a9fa696051febfcbe028e73.png?s=100) 50% 50% no-repeat;
+
+            border-radius: 100px;
+            border: 5px solid rgba(255,255,255, 0.5);
+            height: 90px;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 0px;
+            left: 50%;
+            width: 90px;
+
+          }
+
+          span{
+            @include font-size(2.6);
+            color: rgba($white, 0.5);
+            display: block;
+            padding: 0 60px;
+
+            &:first-child{
+              @include font-size(4.0);
+              color: $white;
+            }
+          }
+        }
+      }
+
+      > .summary{
+        width: 320px;
+
+        &:nth-child(odd){
+          float: right;
+        }
+
+        &:nth-child(even){
+          float: left;
+        }
+      }
+
+
+      @include small-only {
+
+        > header {
+          p{
+            margin-bottom: 20px;
+
+            span{
+              @include font-size(2.2);
+              padding: 0 20px;
+              text-align: left;
+
+              &:first-child{
+                @include font-size(3.4);
+                text-align: center;
+              }
+
+              &:last-child{
+
+              }
+            }
+          }
+
+          ul.social{
+            li{
+              width: 16%;
+              a{
+
+                &:before {
+                  @include font-size(2.8)
+                }
+              }
+            }
+          }
+        }
+
+
+          .summary{
+              width: 100%;
+
+              > article,
+              > a {
+                &:nth-of-type(n+3){
+                  display: none;
+                }
+              }
+
+          }
+        }
+      }
+    }
+  }

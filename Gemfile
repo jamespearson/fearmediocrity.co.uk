@@ -4,12 +4,13 @@ source 'http://rubygems.org'
 
 gem "activesupport"
 gem 'bourbon'
-gem "builder"
+gem "builder", "~> 3.0.0"
 gem "kramdown"
-gem "middleman", "~>3.3.5"
+gem "middleman", "~>3.2"
 gem "middleman-deploy"
 gem 'middleman-autoprefixer'
-gem "middleman-blog"
+gem "middleman-blog", "~> 3.5.3"
+gem "middleman-livereload"
 gem "middleman-minify-html"
 gem 'middleman-smusher'
 gem "middleman-syntax"

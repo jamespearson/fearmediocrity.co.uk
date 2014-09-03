@@ -1,5 +1,28 @@
 <% article ||= current_article %>
 
+<% content_for :page_class do %>
+    content article <%=article.slug%>
+<% end %>
+
+<% content_for :header do %>
+
+    <h1>
+      <span><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%></span>
+      <span><%=article.data.title%></span>
+    </h1>
+
+    <p><span><% if article.tags.present? %><% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span></p>
+
+<% end %>
+
+<% wrap_layout :default do %>
+
+    <div class="body">
+      <%=yield%>
+    </div>
+
+<% end %>
+
 <% content_for :title do %>
     <%= article.title %>
 <% end %>
@@ -12,26 +35,3 @@
 
 <% layout = "default" %>
 <% layout = "pjax" if request.params["_pjax"] %>
-
-<% wrap_layout layout do %>
-
-    <article class="feature blog">
-
-      <header>
-
-        <h1>
-          <%=article.data.title%>
-        </h1>
-        <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
-          <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
-        </p>
-
-      </header>
-
-      <div class="body">
-        <%= yield %>
-      </div>
-
-    </article>
-
-<% end %>

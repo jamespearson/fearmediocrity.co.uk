@@ -1,0 +1,95 @@
+.summary-work{
+
+  article{
+    color: #222;
+    position: relative;
+    height: 175px;
+    margin-bottom: 20px;
+
+    &:before{
+      border-radius: 2px;
+      background: transparent 50% 50% no-repeat;
+      background-size: cover;
+      content: "";
+      bottom: 0;
+      opacity: 0.25;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+
+    &.inq-mobile{
+      &:before {
+        background-image: url(/img/work/inq-mobile/banner.jpg);
+      }
+    }
+
+    &.cant-help-my-selfie{
+      &:before {
+        background-image: url(/img/work/cant-help-my-selfie/banner.jpg);
+      }
+    }
+
+    &.chelsea-fc-hospitality{
+      &:before {
+        background-image: url(/img/work/chelsea-fc-hospitality/banner.jpg);
+      }
+    }
+
+    &.tesco-academy{
+      &:before {
+        background-image: url(/img/work/tesco-academy/banner.jpg);
+      }
+    }
+
+    > img{
+      max-width: 100%;
+      opacity: 0.4;
+      height: 175px;
+    }
+
+    > header{
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+
+      h2{
+        span{
+          background: $white;
+          border-radius: 0 2px 2px 0;
+          clear: both;
+          float: left;
+          margin-bottom: 3px;
+          padding: 0 10px;
+
+          &:first-child{
+            @include font-size(1.8);
+          }
+
+          &:last-child{
+            @include font-size(2.4);
+          }
+
+        }
+      }
+    }
+
+    > footer{
+
+    }
+  }
+
+  > footer{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    a{
+      @extend .button;
+    }
+  }
+
+}
