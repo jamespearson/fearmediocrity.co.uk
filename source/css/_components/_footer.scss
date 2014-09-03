@@ -46,9 +46,11 @@ html{
             padding: 10px;
             margin-bottom: 20px;
             opacity: 0.5;
+            transition: all 0.5s ease-out;
             width: 100%;
 
             &:focus {
+              transition: all 0.5s ease-out;
               opacity: 1;
             }
 
