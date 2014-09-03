@@ -1,10 +1,10 @@
 ---
-title: Samsung
+title: AtMine
 description: Sample article description.
 tags: work, equipment
 layout: work
-client: Samsung
-work_title: Olympic Prediction App
+client: Cayley and Co
+work_title: Wordpress Site
 published: false
 ---
 

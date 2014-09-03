@@ -1,10 +1,10 @@
 ---
-title: Samsung
+title: Main College Site
 description: Sample article description.
 tags: work, equipment
 layout: work
-client: Samsung
-work_title: Olympic Prediction App
+client: Milton Keynes College
+work_title: Main College Site
 published: false
 ---
 
