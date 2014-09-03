@@ -1,9 +1,9 @@
 @mixin body_font{
-  font-family: "proxima-nova"
+  font-family: "proxima-nova",sans-serif;
 }
 
 @mixin title_font{
-  font-family: "bebas-neue",serif;
+  font-family: "bebas-neue",sans-serif;
   font-weight: 300;
 }
 @font-face {
