@@ -64,9 +64,10 @@ activate :directory_indexes
 
 
 activate :livereload
-#
-# activate  :syntax,
-#           :element => "pre>code"
+
+activate  :syntax do |syntax|
+
+end
 
 
 page "/google152d413d2b447042.html", :directory_index => false
