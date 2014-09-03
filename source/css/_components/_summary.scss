@@ -23,8 +23,9 @@
       color: $body_paragraph;
       a{
 
-        color: $black;
+        color: $white;
         background: rgba($white, 0.25);
+        font-weight: bold;
         padding: 0 5px;
       }
     }
