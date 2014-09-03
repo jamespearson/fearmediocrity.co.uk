@@ -82,6 +82,15 @@ html {
         }
       }
     }
+
+    &.error404{
+
+
+      iframe{
+        width: 100%;
+        height: 380px;
+      }
+    }
   }
 }
 
