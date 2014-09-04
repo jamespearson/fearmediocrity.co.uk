@@ -1,7 +1,7 @@
 html{
     body{
         > header{
-          padding-bottom: 20px;
+          padding-bottom: 60px;
 
           p{
             @include font-size(4.0);
@@ -9,6 +9,16 @@ html{
 
             text-align: center;
           }
+
+          @include small-only{
+            min-height: 450px;
+          }
+
+          @include small-landscape-only{
+            min-height: 350px;
+          }
         }
+
+
     }
 }
