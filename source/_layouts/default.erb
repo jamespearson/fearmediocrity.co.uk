@@ -44,6 +44,22 @@
 
   <%= feed_tag :atom, "/feed.xml", :title => "All" %>
 
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-152x152.png" />
+  <!-- Windows 8 Tile Icons -->
+  <meta name="msapplication-square70x70logo" content="/smalltile.png" />
+  <meta name="msapplication-square150x150logo" content="/mediumtile.png" />
+  <meta name="msapplication-wide310x150logo" content="/widetile.png" />
+  <meta name="msapplication-square310x310logo" content="/largetile.png" />
+
   <%= yield_content(:critical_css) %>
 
 </head>
@@ -68,15 +84,15 @@
         <input type="hidden" id="idstamp" name="idstamp" value="sUMloQxdU6MSpu08ckVQFkElH7Ph+vUGxS9dUTkS+HM=" />
           <div>
             <label>Name</label>
-            <input id="Field7" name="Field7" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="" required placeholder="Your name" />
+            <input type="email" id="Field7" name="Field7" spellcheck="false" tabindex="1" required placeholder="Your name" />
 
             <label>Email</label>
-            <input id="Field3" name="Field3" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="2" required placeholder="Your email address"/>
+            <input type="email" id="Field3" name="Field3" spellcheck="false" tabindex="2" required placeholder="Your email address"/>
           </div>
 
           <div>
             <label>Message</label>
-            <textarea id="Field4" name="Field4" spellcheck="true" tabindex="3" onkeyup="" required placeholder="Your message"></textarea>
+            <textarea id="Field4" name="Field4" spellcheck="true" tabindex="3" required placeholder="Your message"></textarea>
 
             <input type="submit" value="Send Message" id="saveForm" name="saveForm" tabindex="4" />
           </div>
@@ -86,17 +102,17 @@
       <%= partial :social %>
     </footer>
 
-    <!--<script>-->
-//        var cb = function() {
-//            var l = document.createElement('link'); l.rel = 'stylesheet';
-//            l.href = '/css/main.css';
-//            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-//        };
-//        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-//                webkitRequestAnimationFrame || msRequestAnimationFrame;
-//        if (raf) raf(cb);
-//        else window.addEventListener('load', cb);
-    <!--</script>-->
+    <script>
+        var cb = function() {
+            var l = document.createElement('link'); l.rel = 'stylesheet';
+            l.href = '/css/main.css';
+            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
