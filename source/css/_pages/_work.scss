@@ -7,7 +7,7 @@ html{
 
       > div{
         &.masthead{
-          background: transparent url(/img/work/cant-help-my-selfie/masthead.jpg) 50% 0% no-repeat;
+          background: transparent image-url('/img/work/cant-help-my-selfie/masthead.jpg') 50% 0% no-repeat;
           background-size: 680px 225px;
           padding-bottom: 33%;
           opacity: 0.5;
