@@ -4,6 +4,11 @@ pageable: true
 per_page: 12
 ---
 
-<% content_for :primary do %>
-    <h1>Articles tagged '<%= tagname %>'</h1>
+<% content_for :header do %>
+<header>
+    <h1>
+      <span>Articles tagged</span>
+      <span><%= tagname.titleize %></span>
+    </h1>
+</header>
 <% end %>

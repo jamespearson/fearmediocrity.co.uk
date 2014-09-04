@@ -1,4 +1,7 @@
-<% content_for :page_class do "article-list" end %>
+<% content_for :page_class do %>
+    archive article
+<% end %>
+
 <% content_for :main_class do "article-list" end %>
 
 <% layout = "default" %>
@@ -7,21 +10,9 @@
 <% wrap_layout layout do %>
     <%= yield %>
 
-    <% page_articles.each_with_index do |article, i| %>
-
-        <article>
-          <header>
-            <h2><%= link_to article.title, article %></h2>
-            <p><%=article.date.strftime("%B #{article.date.day.ordinalize} %Y")%>
-              <span><% if article.tags.present? %>, tagged with: <% article.tags.each do |tag| %><%= link_to tag.capitalize, tag_path(tag) %> <% end %><% end %></span>
-            </p>
-          </header>
-
-          <div class="body">
-            <p><%=article.summary%></p>
-          </div>
-
-        </article>
-
+    <section class="summary summary-blog">
+    <% page_articles.each_with_index do |article| %>
+        <%=partial "article-summary-blog", locals: {article: article} %>
     <% end %>
+    </section>
 <% end %>
