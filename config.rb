@@ -114,7 +114,7 @@ set :markdown_engine, :redcarpet
 # Build-specific configuration
 configure :build do
 
-  activate :asset_host, host: 'https://d3n84b9ezh28lw.cloudfront.net'
+ # activate :asset_host, host: 'https://d3n84b9ezh28lw.cloudfront.net'
 
   activate :asset_hash
 
@@ -124,10 +124,6 @@ configure :build do
   
   # Minify Javascript on build
   activate :minify_javascript
-
-  # Compress PNGs after build
-  require "middleman-smusher"
-  activate :smusher
 
 end
 
