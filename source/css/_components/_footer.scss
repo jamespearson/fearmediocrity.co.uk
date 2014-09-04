@@ -37,8 +37,8 @@ html{
             display: none;
           }
 
-          input[type=text],
-          input[type=email],
+          input[type="text"],
+          input[type="email"],
           textarea {
 
             -webkit-appearance: none;
@@ -62,7 +62,7 @@ html{
             resize: none;
           }
 
-          input[type=submit] {
+          input[type="submit"] {
             @extend .button;
             -webkit-appearance: none;
             background: transparent;
@@ -96,10 +96,17 @@ html{
             padding: 0 20px;
             width: 100%;
 
-            input[type=text],
-            input[type=email],
+            input[type="text"],
+            input[type="email"],
             textarea{
               @include font-size(1.8);
+              margin-bottom: 30px;
+            }
+
+            input[type="text"],
+            input[type="email"]{
+              height: 48px;
+
             }
 
 
