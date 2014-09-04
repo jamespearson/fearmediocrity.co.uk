@@ -1,13 +1,12 @@
 require "active_support/all"
 
 I18n.enforce_available_locales = false
+
 ###
 # Blog settings
 ###
 
 # Time.zone = "UTC"
-
-
 
 activate :blog do |blog|
   blog.name = "work"
@@ -62,6 +61,7 @@ end
 
 activate :directory_indexes
 
+activate :gzip
 
 activate :livereload
 
@@ -91,7 +91,7 @@ set :markdown_engine, :redcarpet
 # Build-specific configuration
 configure :build do
 
-  activate :asset_host, host: 'http://static.fearmediocrity.co.uk/public'
+  activate :asset_host, host: 'https://d3n84b9ezh28lw.cloudfront.net'
 
   activate :asset_hash
 
