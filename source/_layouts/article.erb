@@ -15,6 +15,320 @@
 
 <% end %>
 
+
+<% content_for :critical_css do %>
+
+    <style>
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            display: block;
+        }
+
+        a {
+            background: transparent;
+        }
+
+        pre {
+            overflow: auto;
+        }
+
+        code,pre {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        input {
+            color: inherit;
+            font: inherit;
+            margin: 0;
+        }
+
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        input {
+            line-height: normal;
+        }
+
+        html,input {
+            color: #222;
+        }
+
+        body {
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        a {
+            color: #00e;
+        }
+
+        [class*=" icon-"]:before {
+            font-family: "fontello";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            display: inline-block;
+            text-decoration: inherit;
+            width: 1em;
+            margin-right: .2em;
+            text-align: center;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1em;
+            margin-left: .2em;
+        }
+
+        .icon-home:before,html body>header .home:before {
+            content: '\e800';
+        }
+
+        .o {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .kd {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .s2 {
+            color: #d01040;
+        }
+
+        pre {
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 22.4px;
+            line-height: 2.24rem;
+            background: rgba(255,255,255,0.5);
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none !important;
+        }
+
+        html,body {
+            font-family: "proxima-nova",sans-serif;
+            font-size: 10px;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        html p,body p {
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 22.4px;
+            line-height: 2.24rem;
+            color: #e5e5e5;
+        }
+
+        a,a:link {
+            outline: none;
+            text-decoration: none;
+        }
+
+        html {
+            background: -webkit-radial-gradient(100% 100%, ellipse farthest-side, #cccccc 10%, #85d8ce 50%, #085078 120%) repeat scroll 0 0 transparent;
+            background: radial-gradient(ellipse farthest-side at 100% 100%, #cccccc 10%,#85d8ce 50%,#085078 120%) repeat scroll 0 0 transparent;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        html body {
+            position: relative;
+            position: relative;
+            margin: 0;
+            min-height: 100%;
+            padding: 0 0 40px;
+        }
+
+        html body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9;
+            display: none;
+            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.15) 95%, rgba(0,0,0,0.15) 100%);
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 95%, rgba(0,0,0,0.15) 100%);
+            background-size: 100% 26px;
+        }
+
+        html body>header .home {
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            font-size: 0;
+        }
+
+        html body>header .home:before {
+            font-size: 20px;
+            font-size: 2rem;
+            line-height: 32px;
+            line-height: 3.2rem;
+            -webkit-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            border-radius: 100%;
+            font-size: 2rem;
+            height: 40px;
+            line-height: 2;
+            margin: 0 auto 20px;
+            text-align: center;
+            width: 40px;
+        }
+
+        @media only screen and (min-width: 620px) {
+            html body {
+                margin: 0 auto;
+                width: 680px;
+            }
+        }
+
+        html body>footer>form>div label {
+            display: none;
+        }
+
+        html body>header {
+            padding-bottom: 20px;
+        }
+
+        html body>header p {
+            font-size: 40px;
+            font-size: 4rem;
+            line-height: 64px;
+            line-height: 6.4rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        html body.content>header {
+            border-bottom: 3px solid rgba(255,255,255,0.5);
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        html body.content>header h1 {
+            margin: 0;
+        }
+
+        html body.content>header h1 span {
+            font-size: 40px;
+            font-size: 4rem;
+            line-height: 64px;
+            line-height: 6.4rem;
+            color: #ffffff;
+            display: block;
+            padding: 0 60px;
+            margin: 0;
+            text-align: center;
+        }
+
+        html body.content>header h1 span:first-child {
+            font-size: 26px;
+            font-size: 2.6rem;
+            line-height: 41.6px;
+            line-height: 4.16rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        html body.content>header p {
+            font-size: 16px;
+            font-size: 1.6rem;
+            line-height: 25.6px;
+            line-height: 2.56rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0;
+        }
+
+        html body.content>header p a {
+            color: #ffffff;
+            background: rgba(255,255,255,0.25);
+            padding: 0 5px;
+        }
+
+        html body.content>div h2 {
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            padding: 20px 0;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        html body.content>div p>a {
+            background: rgba(255,255,255,0.5);
+            color: #ffffff;
+            padding: 0 3px;
+        }
+
+        @media only screen and (max-width: 619px) {
+            html body.content>header h1 span {
+                font-size: 30px;
+                font-size: 3rem;
+                line-height: 48.0px;
+                line-height: 4.8rem;
+                color: #ffffff;
+                padding: 0 20px;
+            }
+
+            html body.content>header h1 span:first-child {
+                font-size: 20px;
+                font-size: 2rem;
+                line-height: 32px;
+                line-height: 3.2rem;
+            }
+
+            html body.content>header p {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+            }
+
+            html body.content>div h2 {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            html body.content>div p {
+                font-size: 18px;
+                font-size: 1.8rem;
+                line-height: 28.8px;
+                line-height: 2.88rem;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        ul.social li a span {
+            display: none;
+        }
+
+        html > body img{
+            max-width: 100%;
+        }
+    </style>
+<% end %>
+
 <% wrap_layout :default do %>
 
     <div class="body">

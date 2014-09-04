@@ -44,7 +44,7 @@
 
   <%= feed_tag :atom, "/feed.xml", :title => "All" %>
 
-  <%= partial :critical_css %>
+  <%= yield_content(:critical_css) %>
 
 </head>
 <body class="<%= content_for?(:page_class) ? yield_content(:page_class) : page_classes %>">
@@ -86,17 +86,17 @@
       <%= partial :social %>
     </footer>
 
-    <script>
-        var cb = function() {
-            var l = document.createElement('link'); l.rel = 'stylesheet';
-            l.href = '/css/main.css';
-            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-                webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(cb);
-        else window.addEventListener('load', cb);
-    </script>
+    <!--<script>-->
+//        var cb = function() {
+//            var l = document.createElement('link'); l.rel = 'stylesheet';
+//            l.href = '/css/main.css';
+//            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+//        };
+//        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+//                webkitRequestAnimationFrame || msRequestAnimationFrame;
+//        if (raf) raf(cb);
+//        else window.addEventListener('load', cb);
+    <!--</script>-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
