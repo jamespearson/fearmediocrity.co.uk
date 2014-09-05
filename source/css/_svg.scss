@@ -1,0 +1,21 @@
+
+.svg-icon{
+  background: transparent 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+
+
+.svg-html{
+  @extend .svg-icon;
+  background-image: image-url('html5.svg');
+}
+
+.svg-css{
+  @extend .svg-icon;
+  background-image: image-url('css3.svg');
+}
+
+.svg-ruby{
+  @extend .svg-icon;
+  background-image: image-url('ruby.svg');
+}
