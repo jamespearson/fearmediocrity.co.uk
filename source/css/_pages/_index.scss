@@ -58,72 +58,76 @@ html{
 
 
       @include small-only {
+        &.index {
+          > header {
+            min-height: 450px;
 
-        > header {
-          min-height: 450px;
+            p {
+              margin-bottom: 20px;
 
-          p{
-            margin-bottom: 20px;
-
-            &:before{
-
-            }
-
-            span{
-              @include font-size(2.2);
-              padding: 0 20px;
-              text-align: left;
-
-              &:first-child{
-                @include font-size(3.4);
-                text-align: center;
-              }
-
-              &:last-child{
+              &:before {
 
               }
+
+              span {
+                @include font-size(2.2);
+                padding: 0 20px;
+                text-align: left;
+
+                &:first-child {
+                  @include font-size(3.4);
+                  text-align: center;
+                }
+
+                &:last-child {
+
+                }
+              }
             }
-          }
 
-          ul.social{
-            @include clearfix;
-            margin-bottom: 0px;
-            li{
+            ul.social {
+              @include clearfix;
+              margin-bottom: 0px;
+              li {
 
-              a{
+                a {
 
-                &:before {
-                  @include font-size(2.8)
+                  &:before {
+                    @include font-size(2.8)
+                  }
                 }
               }
             }
           }
-        }
 
+          .summary {
+            width: 100%;
 
-          .summary{
-              width: 100%;
-
-              > article,
-              > a {
-                &:nth-of-type(n+3){
-                  display: none;
-                }
+            > article,
+            > a {
+              &:nth-of-type(n+3) {
+                display: none;
               }
+            }
 
           }
         }
+      }
 
       @include small-landscape-only{
-        > header{
-          min-height: 350px;
+        &.index {
+          > header {
+            min-height: 350px;
+          }
         }
       }
 
       @include medium{
 
-        > .summary{
-          height: 915px;
+        &.index {
+          > .summary {
+            height: 915px;
+          }
         }
       }
     }
