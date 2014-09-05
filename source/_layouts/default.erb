@@ -72,6 +72,14 @@
         <%= yield_content :header %>
     </header>
 
+    <% if data.site.available %>
+        <article class="available">
+          <h1>I am currently available for projects</h1>
+          <p>Looking for someone to help on your Ruby on Rails project? Need someone to build of modernise your website? </p>
+        </article>
+    <% end %>
+
+
     <%= yield %>
 
     <footer>
