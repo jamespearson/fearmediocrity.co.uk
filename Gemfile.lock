@@ -180,6 +180,7 @@ DEPENDENCIES
   activesupport
   bourbon
   builder (~> 3.0.0)
+  image_optim
   kramdown
   middleman (~> 3.2)
   middleman-autoprefixer

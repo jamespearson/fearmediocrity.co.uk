@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 gem "activesupport"
 gem 'bourbon'
 gem "builder", "~> 3.0.0"
+gem "image_optim"
 gem "kramdown"
 gem "middleman", "~>3.2"
 gem "middleman-deploy"
