@@ -7,8 +7,9 @@ html{
 
       > div{
         &.masthead{
-          background: transparent image-url('/img/work/cant-help-my-selfie/masthead.jpg') 50% 0% no-repeat;
+          background: transparent 50% 0% no-repeat;
           background-size: 680px 225px;
+          border-radius: 3px;
           padding-bottom: 33%;
           opacity: 0.5;
         }
@@ -17,6 +18,52 @@ html{
         &.body{
           margin-top: 20px;
           border-top: 3px solid rgba($white,0.5);
+
+          .skills{
+            @include clearfix;
+            margin: 0;
+            padding: 0;
+
+            li{
+              list-style-type: none;
+              float: left;
+              padding: 0;
+              margin: 20px 2%;
+              min-width: 31%;
+              max-width: 48%;
+
+              &:nth-child(odd){
+                margin-left: 0;
+              }
+
+              &:nth-child(even){
+                margin-right: 0;
+              }
+
+
+
+              &:before{
+                @extend .svg-ruby;
+                border: 5px solid rgba($white, 0.5);
+                border-radius: 100%;
+                background-size: 75% 75%;
+                content: "";
+                display: block;
+                margin: 0 auto;
+                width: 100px;
+                height: 100px;
+              }
+
+              &.css{  &:before{ background-image: image-url('css3.svg')}}
+              &.html{ &:before{ background-image: image-url('html5.svg')}}
+              &.ruby{ &:before{ background-image: image-url('ruby.svg')}}
+
+              h3{
+                margin: 0;
+                padding-bottom: 0;
+              }
+            }
+          }
         }
 
 
@@ -43,10 +90,27 @@ html{
               }
 
               a{
-                background: pink;
                 display: block;
                 height: 155px;
-                opacity: 0.5;
+                position: relative;
+
+                &:before{
+                  content: "";
+                  border-radius: 3px;
+                  background-size: 155px 155px;
+                  height: 100%;
+                  left: 0;
+                  position: absolute;
+                  top: 0;
+                  transition: opacity 0.5s ease-out;
+                  width: 100%;
+                }
+
+                &:hover{
+                  &:before{
+                    opacity: 0.5
+                  }
+                }
               }
             }
 
@@ -75,25 +139,34 @@ html{
 
 
       }
-    }
 
 
+      $project_list: cant-help-my-selfie chelsea-fc-hospitality tesco-academy;
 
-    &.cant-help-my-selfie{
-      > .gallery{
-        > ul{
-          > li{
-            &:nth-child(1){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
-            &:nth-child(2){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
-            &:nth-child(3){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
-            &:nth-child(4){   background-image: url(image-path('work/cant-help-my-selfie/masthead.jpg')) ; }
+
+      @each $project in $project_list {
+
+        &.#{$project}{
+          > .masthead{
+            background-image:  image-url('/img/work/#{$project}/masthead.jpg');
+          }
+          > .gallery{
+            > ul{
+              > li{
+                @for $i from 1 through 4 {
+                  &:nth-child(#{$i}) {
+                    a {
+                      &:before {
+                        background-image: url(image-path('work/#{$project}/gallery_#{$i}_thumbnail.jpg'));
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
-
-
-
-
   }
 }
