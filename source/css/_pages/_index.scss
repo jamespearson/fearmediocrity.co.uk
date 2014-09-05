@@ -47,11 +47,11 @@ html{
       > .summary{
         width: 320px;
 
-        &:nth-of-type(odd){
+        &:nth-of-type(even){
           float: right;
         }
 
-        &:nth-of-type(even){
+        &:nth-of-type(odd){
           float: left;
         }
       }
