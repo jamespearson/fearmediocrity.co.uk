@@ -12,50 +12,61 @@ ul.social{
     width: 10%;
 
     a{
-      transition: all 0.5s ease-out;
-      transform-origin: 50% 50%;
-      display: inline;
+
+
+      display: block;
+      height: 30px;
       position: relative;
       text-decoration: none;
       text-align: center;
 
-      &:before {
-        @include font-size(2, 1);
+      span{
+        height: 40px;
+        font-size: 0;
 
-        color: rgba($white, 0.5);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        font-weight: normal;
-        line-height: 30px;
-        text-align: center;
-        transition: all 0.5s ease-out;
+        &:before {
+          @include font-size(2.4, 2.8);
 
+          color: rgba($white, 0.5);
+          left: 50%;
 
+          position: absolute;
+          top: 50%;
+
+          text-align: center;
+          transition: all 0.25s ease-out;
+          transform: translate(-50%, -50%), translateZ(0);
+          transform-origin: 50% 50%;
+          vertical-align: middle;
+        }
       }
+
+
 
       &:hover{
 
-        &:before{
-          @include font-size(2.5, 1);
+        span:before{
+
           color: rgba($white, 1);
           line-height: 30px;
         }
       }
 
-      &[href*="twitter.com"]:before {     content: '\e802';}
-      &[href*="linkedin.com"]:before {    content: '\e801'; }
-      &[href*="plus.google.com"]:before { content: '\e805'; }
-      &[href*="github.com"]:before {      content: '\e804'; }
-      &[href*="/contact/"]:before {       content: '\e800'; }
-      &[href*="skype:"]:before {          content: '\e803'; }
+      &[href*="twitter.com"] span:before {     content: '\e802';}
+      &[href*="linkedin.com"] span:before {    content: '\e801'; }
+      &[href*="plus.google.com"] span:before { content: '\e805'; }
+      &[href*="github.com"] span:before {      content: '\e804'; }
+      &[href*="/contact/"] span:before {       content: '\e800'; }
+      &[href*="skype:"] span:before {          content: '\e803'; }
 
-      span{
-        display: none
-      }
+
     }
   }
 
+  @include small-only{
+
+    li{
+      width: 19%;
+    }
+  }
 }
