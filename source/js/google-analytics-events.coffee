@@ -6,9 +6,8 @@ trackOutboundLink = (url) =>
 
 $ ->
 
-  $(document).find('a[href^="http"]').on 'click', (e) ->
+  $(document).find('a[href^="http"],a[href^="skype"]').on 'click', (e) ->
     e.preventDefault()
 
     $this = $(this)
-
     trackOutboundLink($this.attr('href'));
