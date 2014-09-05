@@ -59,6 +59,7 @@ html{
       @include small-only {
 
         > header {
+          min-height: 450px;
 
           p{
             margin-bottom: 20px;
@@ -107,6 +108,12 @@ html{
 
           }
         }
+
+      @include small-landscape-only{
+        > header{
+          min-height: 350px;
+        }
       }
     }
   }
+}
