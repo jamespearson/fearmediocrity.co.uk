@@ -5,6 +5,7 @@
 @import "colors";
 
 @import "typography";
+@import "icons";
 @import "mixins";
 
 @import "_code_highlight.scss.erb";
@@ -25,6 +26,7 @@ html, body{
   min-height: 100%;
   margin: 0;
   padding: 0;
+
 
   p{
     @include font-size(1.4);
@@ -47,9 +49,6 @@ html {
 
 
   body {
-    @include baseline-grid();
-
-
     position: relative;
     margin: 0;
     min-height: 100%;
