@@ -9,6 +9,7 @@ html{
         .home{
           display: none;
         }
+
         p{
           padding-top: 110px;
           margin-bottom: 30px;
@@ -64,6 +65,10 @@ html{
           p{
             margin-bottom: 20px;
 
+            &:before{
+
+            }
+
             span{
               @include font-size(2.2);
               padding: 0 20px;
@@ -84,7 +89,7 @@ html{
             @include clearfix;
             margin-bottom: 0px;
             li{
-              width: 16%;
+
               a{
 
                 &:before {
@@ -112,6 +117,13 @@ html{
       @include small-landscape-only{
         > header{
           min-height: 350px;
+        }
+      }
+
+      @include medium{
+
+        > .summary{
+          height: 915px;
         }
       }
     }
