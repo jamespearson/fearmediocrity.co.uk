@@ -6,6 +6,7 @@
 
 #= require "google-analytics-events"
 
-
-$ ->
+$(window).bind "load", () ->
+  $body = $('body')
+  $body.find(' > *').css('opacity', 1);
 
