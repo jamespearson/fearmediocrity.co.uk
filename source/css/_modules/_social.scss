@@ -46,6 +46,7 @@ ul.social{
       &:hover{
 
         span:before{
+          transform: scale(1.1);
           color: rgba($white, 1);
         }
       }
