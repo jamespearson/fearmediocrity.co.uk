@@ -20,6 +20,8 @@
   outline: none !important;
 }
 
+
+
 html, body{
   @include body-font;
 
@@ -30,7 +32,7 @@ html, body{
 
 
   p{
-    @include font-size(1.4);
+    @include font-size(1.8);
     color: $body_paragraph;
   }
 }
@@ -85,6 +87,8 @@ html {
       }
     }
 
+
+
     &.error404{
 
 
@@ -108,6 +112,7 @@ html {
   }
 }
 
+@import "_components/available";
 @import "_components/footer";
 @import "_components/header";
 @import "_components/summary";
