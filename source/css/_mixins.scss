@@ -66,12 +66,12 @@
 
 
 .button{
-  @include font-size(1.4);
+  @include font-size(1.8);
   border: 2px solid rgba($white, 0.5);
   border-radius: 2px;
   color: $white;
   display: block;
-  height: 40px;
+  height: 45px;
   position: relative;
   transition: all 0.5s ease-out;
 
