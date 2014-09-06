@@ -23,7 +23,7 @@
 html, body{
   @include body-font;
 
-  font-size: 10px;
+  font-size: 10px !important;
   min-height: 100%;
   margin: 0;
   padding: 0;
