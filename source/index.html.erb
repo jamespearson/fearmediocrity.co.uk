@@ -22,7 +22,7 @@ per_page: 10
   <% blog_count = 0 %>
   <% page_articles('blog').select{|resource| resource.data.published != false}.each do |article| %>
       <% blog_count += 1 %>
-      <% next if blog_count > 3 %>
+      <% next if blog_count > 2 %>
       <%=partial "article-summary-blog", locals: {article: article} %>
   <% end %>
 
@@ -41,7 +41,7 @@ per_page: 10
   <% work_count = 0 %>
   <% page_articles('work').select{|resource| resource.data.published != false}.each do |article| %>
       <% work_count += 1 %>
-      <% next if work_count > 4 %>
+      <% next if work_count > 3 %>
       <%=partial "article-summary-work", locals: {article: article} %>
   <% end %>
 
