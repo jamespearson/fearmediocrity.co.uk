@@ -40,17 +40,17 @@ html{
           input[type="text"],
           input[type="email"],
           textarea {
-
+            @include font-size(1.6);
             -webkit-appearance: none;
             border: 0;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: 15px 10px;
+            margin: 15px 0;
             opacity: 0.5;
-            transition: all 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
             width: 100%;
 
             &:focus {
-              transition: all 0.5s ease-out;
+              transition: opacity 0.5s ease-out;
               opacity: 1;
             }
 
@@ -58,14 +58,16 @@ html{
 
           textarea {
 
-            height: 100px;
+            height: 142px;
             resize: none;
+
           }
 
           input[type="submit"] {
             @extend .button;
             -webkit-appearance: none;
             background: transparent;
+            margin-top: 10px;
             width: 100%;
           }
         }
@@ -105,7 +107,7 @@ html{
 
             input[type="text"],
             input[type="email"]{
-              height: 48px;
+              height: 50px;
 
             }
 
