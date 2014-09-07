@@ -21,21 +21,23 @@ ul.social{
       text-align: center;
 
       span{
+        background: transparent;
+        color: rgba($white, 0.5);
         height: 40px;
         font-size: 0;
 
         &:before {
           @include font-size(2.4, 2.8);
 
-          color: rgba($white, 0.5);
+
           left: 50%;
 
           position: absolute;
           top: 50%;
 
           text-align: center;
-          transition: all 0.25s ease-out;
-          transform: translate(-50%, -50%), translateZ(0);
+          transition: color 0.5s ease-out;
+          transform: translate(-50%, -50%), rotateZ(360deg);
           transform-origin: 50% 50%;
           vertical-align: middle;
         }
@@ -45,8 +47,7 @@ ul.social{
 
       &:hover{
 
-        span:before{
-          transform: scale(1.1);
+        span{
           color: rgba($white, 1);
         }
       }
