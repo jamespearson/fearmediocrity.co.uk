@@ -22,4 +22,4 @@
 }());
 
 
-//= require "matchHeight/jquery.matchHeight-min.js"
+document.addEventListener("touchstart", function(){}, true)
