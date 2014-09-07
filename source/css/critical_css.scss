@@ -102,6 +102,24 @@ html{
   html{
     body{
       margin: 0;
+      > footer{
+
+
+
+          > form {
+            > div {
+
+              input[type="text"],
+              input[type="email"],
+              textarea{
+                @include font-size(1.8);
+                margin-bottom: 30px;
+                min-height: 60px;
+              }
+
+            }
+          }
+        }
     }
   }
 }

@@ -103,14 +103,8 @@ html{
             textarea{
               @include font-size(1.8);
               margin-bottom: 30px;
+              min-height: 60px;
             }
-
-            input[type="text"],
-            input[type="email"]{
-              height: 50px;
-
-            }
-
 
           }
         }
