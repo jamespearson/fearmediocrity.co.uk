@@ -106,7 +106,8 @@ html{
                   width: 100%;
                 }
 
-                &:hover{
+                &:hover,
+                &:focus{
                   &:before{
                     opacity: 0.5
                   }

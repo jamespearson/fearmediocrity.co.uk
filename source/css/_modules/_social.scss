@@ -45,7 +45,8 @@ ul.social{
 
 
 
-      &:hover{
+      &:hover,
+      &:focus{
 
         span{
           color: rgba($white, 1);
