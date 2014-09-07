@@ -8,5 +8,10 @@
 
 $(window).bind "load", () ->
   $body = $('body')
-  $body.find(' > *').css('opacity', 1);
+
+  setTimeout () =>
+    $body.find(' > *').css('opacity', 1);
+  , 250
+
+
 
