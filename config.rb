@@ -92,8 +92,6 @@ activate  :syntax do |syntax|
 
 end
 
-
-page "/google152d413d2b447042.html", :directory_index => false
 page "robots.txt", :layout => false
 page "humans.txt", :layout => false
 page "/feed.xml", :layout => false
