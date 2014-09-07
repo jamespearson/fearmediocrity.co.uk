@@ -73,7 +73,7 @@
   display: block;
   height: 45px;
   position: relative;
-  transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out, color 0.5s ease-out;
   transform: rotateZ(360deg);
 
 
@@ -85,10 +85,11 @@
     transform: translate(-50%, -50%);
   }
 
-  &:hover{
+  &:hover,
+  &:focus{
     background: $white;
     color: $black;
-    transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
     transform: rotateZ(360deg);
   }
 }
