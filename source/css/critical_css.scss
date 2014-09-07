@@ -9,20 +9,20 @@
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('https://d3n84b9ezh28lw.cloudfront.net/fonts/proximanova-reg-webfont.eot'); /* IE9 Compat Modes */
-  src: url('https://d3n84b9ezh28lw.cloudfront.net/fonts/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/proximanova-reg-webfont.woff') format('woff'), /* Modern Browsers */
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/proximanova-reg-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/proximanova-reg-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('<%=data.site.cdn_url%>/fonts/proximanova-reg-webfont.eot'); /* IE9 Compat Modes */
+  src: url('<%=data.site.cdn_url%>/fonts/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('<%=data.site.cdn_url%>/fonts/proximanova-reg-webfont.woff') format('woff'), /* Modern Browsers */
+  url('<%=data.site.cdn_url%>/fonts/proximanova-reg-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('<%=data.site.cdn_url%>/fonts/proximanova-reg-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
   font-family: 'fontello';
-  src: url('https://d3n84b9ezh28lw.cloudfront.net/fonts/fontello.eot?84168755');
-  src: url('https://d3n84b9ezh28lw.cloudfront.net/fonts/fontello.eot?84168755#iefix') format('embedded-opentype'),
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/fontello.woff?84168755') format('woff'),
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/fontello.ttf?84168755') format('truetype'),
-  url('https://d3n84b9ezh28lw.cloudfront.net/fonts/fontello.svg?84168755#fontello') format('svg');
+  src: url('<%=data.site.cdn_url%>/fonts/fontello.eot?84168755');
+  src: url('<%=data.site.cdn_url%>/fonts/fontello.eot?84168755#iefix') format('embedded-opentype'),
+  url('<%=data.site.cdn_url%>/fonts/fontello.woff?84168755') format('woff'),
+  url('<%=data.site.cdn_url%>/fonts/fontello.ttf?84168755') format('truetype'),
+  url('<%=data.site.cdn_url%>/fonts/fontello.svg?84168755#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
