@@ -66,7 +66,17 @@ ul.social{
   @include small-only{
 
     li{
-      width: 19%;
+      height: 50px;
+      margin: 10px 2%;
+      width: 28%;
+
+      a{
+        height: 50px;
+
+        span{
+
+        }
+      }
     }
   }
 }
