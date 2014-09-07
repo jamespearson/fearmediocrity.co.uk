@@ -32,27 +32,11 @@
     }
 
 
-    &.inq-mobile{
-      &:before {
-        background-image: image-url('/img/work/inq-mobile/banner.jpg');
-      }
-    }
-
-    &.cant-help-my-selfie{
-      &:before {
-        background-image: image-url('/img/work/cant-help-my-selfie/banner.jpg');
-      }
-    }
-
-    &.chelsea-fc-hospitality{
-      &:before {
-        background-image: image-url('/img/work/chelsea-fc-hospitality/banner.jpg');
-      }
-    }
-
-    &.tesco-academy{
-      &:before {
-        background-image: image-url('/img/work/tesco-academy/banner.jpg');
+    @each $project in $project_list {
+      &.#{$project} {
+        &:before {
+          background-image: image-url('/img/work/#{$project}/banner.jpg');
+        }
       }
     }
 
@@ -71,9 +55,11 @@
 
       h2{
         span{
+          @include title_font;
           background: $white;
           border-radius: 0 2px 2px 0;
           clear: both;
+
           float: left;
           margin-bottom: 3px;
           padding: 0 10px;
