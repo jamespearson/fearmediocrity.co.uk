@@ -16,7 +16,8 @@
   <% description = yield_content(:description) || data.site.description %>
   <% keywords = yield_content(:keywords) || data.site.keywords %>
   <% url = "#{data.site.url}#{current_page.url}" %>
-  <% image_url = data.site.url + current_page.data.image if current_page.data.image %>
+  <% image_url = "#{data.site.url}#{yield_content(:image_url)}" if content_for?(:image_url) %>
+  <% og_type = yield_content(:og_type) if content_for?(:og_type) %>
 
 
   <title><%=title%></title>
@@ -29,15 +30,18 @@
   <meta name="twitter:url" content="<%= url %>" />
   <meta name="twitter:title" content="<%= title %>" />
   <meta name="twitter:site" content="@fearmediocrity" />
-  <meta name="twitter:description" content="<%= description %>" />
+  <meta name="twitter:site" content="@fearmediocrity" />
+  <meta name="twitter:description" content="<%= image_url %>" />
 
   <% if image_url %>
       <meta name="twitter:image:src" content="<%=image_url%>" />
   <% end %>
 
   <meta property="og:title" content="<%=title%>" />
-  <meta property="og:type" content="photo:photo" />
+  <meta property="og:type" content="<%= og_type || "website"%>" />
   <meta property="og:url" content="<%=url%>" />
+  <meta property="og:site_name" content="James Pearson's Blog and Portfolio" />
+
   <% if image_url %>
       <meta property="og:image" content="<%=image_url%>" />
   <% end %>

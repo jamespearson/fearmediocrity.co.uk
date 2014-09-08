@@ -3,13 +3,9 @@
 <% content_for :title do %><%=article.data.title%><% end %>
 <% content_for :description do %><%=article.data.title%><% end %>
 
-<% if article.data.keywords %>
-    <% content_for :keywords do %><%=article.data.title%><% end %>
-<%end%>
+<% content_for :keywords do %><%=article.data.title%><% end %>
+<% content_for :image_url do %>/img/<%=article.slug%>/open-graph.jpg<% end %>
 
-<% if article.data.image_url %>
-    <% content_for :image_url do %><%=article.data.image_url%><% end %>
-<% end%>
 
 <% content_for :page_class do %>
     content article <%=article.slug%>
