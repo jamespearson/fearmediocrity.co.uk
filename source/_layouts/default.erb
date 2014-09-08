@@ -129,6 +129,7 @@
         ga('create',
                 '<%= data.site.google_analytics_tracking_id %>',
                 '<%= data.site.google_analytics_domain %>');
+        ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
     <% end %>
