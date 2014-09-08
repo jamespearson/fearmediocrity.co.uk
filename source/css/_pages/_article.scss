@@ -3,6 +3,18 @@ html{
   body{
 
     &.article{
+
+
+      &.technology-behind-canthelpmyselfie{
+
+        img.desktop{
+          float: right;
+          display: block;
+          margin-left: 2%;
+          width: 48%;
+
+        }
+      }
     }
 
   }
