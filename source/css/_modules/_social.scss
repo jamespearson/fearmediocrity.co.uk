@@ -31,10 +31,9 @@ ul.social{
 
 
           left: 50%;
-
+          line-height: 35px;
           position: absolute;
           top: 50%;
-
           text-align: center;
           transition: color 0.5s ease-out;
           transform: translate(-50%, -50%), rotateZ(360deg);
@@ -49,7 +48,12 @@ ul.social{
       &:focus{
 
         span{
+
           color: rgba($white, 1);
+
+          &:before{
+            line-height: 35px;
+          }
         }
       }
 
