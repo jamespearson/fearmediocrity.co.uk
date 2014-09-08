@@ -1,5 +1,13 @@
-
 <% article = current_article %>
+
+<% content_for :title do %><%=article.data.title%><% end %>
+<% content_for :description do %><%=article.data.description%><% end %>
+
+<% content_for :keywords do %><%=article.data.keywords%><% end %>
+<% content_for :image_url do %><%=image_path("/img/work/#{article.slug}/open-graph.jpg")%><% end %>
+
+<% content_for :og_type do %>article<% end %>
+
 
 <% content_for :page_class do %>
     content work <%=article.slug%>

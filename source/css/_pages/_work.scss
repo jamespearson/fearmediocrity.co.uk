@@ -70,6 +70,7 @@ html{
         &.gallery{
           @include clearfix;
 
+          display: none;
 
           ul{
             @include inline_list;

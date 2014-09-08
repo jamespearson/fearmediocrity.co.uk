@@ -46,6 +46,7 @@ html {
       }
 
 
+
       @include small-only{
 
         .summary{
@@ -79,5 +80,6 @@ html {
         }
       }
     }
+
   }
 }
