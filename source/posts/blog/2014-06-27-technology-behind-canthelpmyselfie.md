@@ -1,6 +1,6 @@
 ---
 title: "Technology behind #CANTHELPMYSELFIE"
-description: Adding bower's front-end package management to a Middleman powered site.
+description: "How we made an interactive store front with real time touch voting for French Connection."
 tags: client work, responsive, campaign
 layout: article
 ---
