@@ -256,6 +256,24 @@ html {
           }
         }
       }
+
+      @include small-only{
+        > header {
+          h1 {
+            padding: 0;
+            > span {
+
+              @include font-size(2.6);
+              padding: 0 20px;
+
+              &:first-child {
+                @include font-size(2.0);
+                padding: 0 20px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
