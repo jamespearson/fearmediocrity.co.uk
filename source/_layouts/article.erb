@@ -1,7 +1,7 @@
 <% article ||= current_article %>
 
 <% content_for :title do %><%=article.data.title%><% end %>
-<% content_for :description do %><%=article.data.title%><% end %>
+<% content_for :description do %><%=article.data.description%><% end %>
 
 <% content_for :keywords do %><%=article.data.title%><% end %>
 <% content_for :image_url do %>/img/posts/<%=article.slug%>/open-graph.jpg<% end %>
