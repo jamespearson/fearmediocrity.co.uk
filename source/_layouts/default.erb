@@ -30,21 +30,21 @@
   <meta name="twitter:url" content="<%= url %>" />
   <meta name="twitter:title" content="<%= title %>" />
   <meta name="twitter:site" content="@fearmediocrity" />
-  <meta name="twitter:site" content="@fearmediocrity" />
+  <meta name="twitter:creator" content="@fearmediocrity" />
   <meta name="twitter:description" content="<%= description %>" />
 
   <% if image_url %>
-      <meta name="twitter:image:src" content="<%=image_url%>" />
+  <meta name="twitter:image:src" content="<%=image_url%>" />
   <% end %>
 
   <meta property="og:title" content="<%=title%>" />
-  <meta property="og:title" content="<%=description%>" />
+  <meta property="og:description" content="<%=description%>" />
   <meta property="og:type" content="<%= og_type || "website"%>" />
   <meta property="og:url" content="<%=url%>" />
   <meta property="og:site_name" content="James Pearson's Blog and Portfolio" />
 
   <% if image_url %>
-      <meta property="og:image" content="<%=image_url%>" />
+  <meta property="og:image" content="<%=image_url%>" />
   <% end %>
 
   <%= feed_tag :atom, "/feed.xml", :title => "All" %>
