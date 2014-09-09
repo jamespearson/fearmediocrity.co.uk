@@ -27,9 +27,13 @@
 
 <% wrap_layout :default do %>
 
-    <div class="masthead">
-
-    </div>
+    <% if article.data.url %>
+    <a href="<%=article.data.url%>" class="masthead" title="Click here to see the results of this project.">
+        View Project
+    </a>
+    <% else %>
+    <div class="masthead"></div>
+    <% end %>
 
     <div class="body">
       <%=yield%>

@@ -4,20 +4,30 @@ html{
 
     &.work{
 
+      .masthead{
+        background: transparent 50% 0% no-repeat;
+        background-size: 680px 225px;
+        color: transparent;
+        display: block;
+        border-radius: 3px;
+        font-size: 0;
+        padding-bottom: 33%;
+        opacity: 0.5;
+      }
 
       > div{
-        &.masthead{
-          background: transparent 50% 0% no-repeat;
-          background-size: 680px 225px;
-          border-radius: 3px;
-          padding-bottom: 33%;
-          opacity: 0.5;
-        }
-
 
         &.body{
           margin-top: 20px;
           border-top: 3px solid rgba($white,0.5);
+
+          .button{
+            @extend .button;
+
+            margin: 0 auto;
+            width: 75%;
+
+          }
 
           .skills{
             @include clearfix;
@@ -54,9 +64,10 @@ html{
                 height: 100px;
               }
 
-              &.css{  &:before{ background-image: image-url('css3.svg')}}
-              &.html{ &:before{ background-image: image-url('html5.svg')}}
-              &.ruby{ &:before{ background-image: image-url('ruby.svg')}}
+              &.css{    &:before{ background-image: image-url('css3.svg')}}
+              &.code{   &:before{ background-image: image-url('code.svg'); background-size: 70% 70%}}
+              &.html{   &:before{ background-image: image-url('html5.svg')}}
+              &.ruby{   &:before{ background-image: image-url('ruby.svg')}}
 
               h3{
                 margin: 0;
@@ -125,6 +136,10 @@ html{
       @include small-only{
 
         > div{
+
+          .button{
+            width: 100%;
+          }
 
           &.gallery{
             ul{
