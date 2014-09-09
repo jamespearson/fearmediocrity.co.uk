@@ -68,7 +68,7 @@
         <%= yield_content :header %>
     </header>
 
-    <%=partial :available if data.site.available %>
+    <%=partial :available if data.site.available && current_page.path != "availability.html" %>
 
     <%= yield %>
 
