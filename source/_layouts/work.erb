@@ -38,13 +38,15 @@
 
     <div class="body">
       <%=yield%>
+
     </div>
+
+    <% if content_for?(:gallery) %>
+        <div id="gallery" class="gallery">
+          <h2>Project Gallery</h2>
+          <%=yield_content(:gallery)%>
+        </div>
+    <% end %>
 
 <% end %>
 
-<% if content_for?(:gallery) %>
-    <div class="gallery">
-        <h2>Project Gallery</h2>
-        <%=yield_content(:gallery)%>
-    </div>
-<% end %>
