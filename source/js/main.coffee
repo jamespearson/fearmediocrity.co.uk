@@ -15,4 +15,4 @@ $(window).bind "load", () ->
 
     $gallery.lightGallery
       caption: true
-      desc: true
+      desc: false
