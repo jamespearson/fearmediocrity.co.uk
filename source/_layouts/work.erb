@@ -40,18 +40,11 @@
       <%=yield%>
     </div>
 
+<% end %>
 
-    <% if article.data.gallery %>
+<% if content_for?(:gallery) %>
     <div class="gallery">
-
-      <h2>Project Gallery</h2>
-      <ul>
-        <li><a href="#" title>Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-      </ul>
-
+        <h2>Project Gallery</h2>
+        <%=yield_content(:gallery)%>
     </div>
-    <% end %>
 <% end %>

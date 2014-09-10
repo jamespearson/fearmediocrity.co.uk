@@ -81,8 +81,6 @@ html{
         &.gallery{
           @include clearfix;
 
-          display: none;
-
           ul{
             @include inline_list;
             padding-top: 10px;
