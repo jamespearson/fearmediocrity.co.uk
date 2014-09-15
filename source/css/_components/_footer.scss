@@ -71,6 +71,30 @@ html{
             width: 100%;
           }
         }
+
+
+      }
+
+      > aside{
+
+        margin-top: -40px;
+        float: left;
+        color: #e5e5e5;
+
+        p{
+          margin: 0;
+
+          a{
+            display: inline-block;
+            background: none repeat scroll 0 0 rgba(255, 255, 255, 0.25);
+            color: $white;
+            padding: 5px;
+
+            &:hover{
+              color: $white;
+            }
+          }
+        }
       }
 
       > .social{
@@ -107,6 +131,13 @@ html{
             }
 
           }
+        }
+
+        > aside{
+          text-align: center;
+          margin-top: 0;
+          padding: 20px;
+
         }
       }
     }
