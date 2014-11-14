@@ -1,4 +1,4 @@
-title: James Pearson, Ruby on Rails web developer
+title: James Pearson, Web developer
 description: "Freelance Web Development and Ruby on Rails expert. Get in touch to discuss how I can help on your next project."
 keywords: ruby on rails, html, html5, css3, javascript, coffeescript, jquery, developer, freelance
 baseurl: /
@@ -21,4 +21,4 @@ twitter_user: fearmediocrity
 google_analytics_tracking_id: UA-35771182-1
 google_analytics_domain: fearmediocrity.co.uk
 
-available: false
+available: true

@@ -1,20 +1,25 @@
 ---
-title: Main College Site
-description: Sample article description.
-tags: work, equipment
+title: Milton Keynes College Website
+description: I created the Milton Keynes College website that was in place from 2012 - 2014.
+keyworks: milton keynes, milton keynes college, mkcollege, mk colege, cms, web, development, web site
 layout: work
 client: Milton Keynes College
 work_title: Main College Site
-published: false
+published: true
 ---
 
+<% content_for(:byline) do%>whilst freelancing<% end %>
 
 <section class="about">
     <header>
         <h2>About this project.</h2>
     </header>
 
-    <p></p>
+    <p>In late 2011 Milton Keynes college came to us with a requirement for a new website. They had experimented with creating it in house, but struggled to find the direction they were looking for.</p>
+
+    <p>With Anthony Faconti at the designer, and myself as the developer we built a custom PHP based content management system. This allow none technical staff to manage the site, and add new pages / images without having to come back to us.</p>
+
+    <p>The site launched in Mid 2011, and remained the colleges primary presence on the web until the start of the  2014/15 school year.</p>
 
 </section>
 
@@ -26,29 +31,39 @@ published: false
 
     <p></p>
 
-    <ul>
-        <li>
-            <h3>Ruby on Rails Application</h3>
-            <p>The bulk of the web development was a Ruby on Rails 4.1 app.</p>
-        </li>
+    <ul class="skills">
 
-        <li>
+        <li class="html">
             <h3>Front End Development</h3>
-            <p>Developed using the latest HTML5 and CSS3 standards the site was responsive and optimised for a short page load time.</p>
+            <p>Developed using the latest HTML5 and CSS3 standards, the site was optimised for desktop and tablet usage.</p>
         </li>
+
+        <li class="code">
+            <h3>CMS creation</h3>
+            <p>Created a custom PHP based CMS, that allowed advanced features such as image focus points and automatic resizing.</p>
+        </li>
+
     </ul>
 </section>
 
-<section class="others">
-    <header>
-        <h2>Others</h2>
-    </header>
-
-    <p>This work was completed whilst working with Somewhat, and wouldn't be possible without the following:</p>
+<% content_for :gallery do %>
 
     <ul>
-        <li>
+      <li data-src="<%=image_path('/img/work/milton-keynes-college/gallery_2.jpg') %>" data-title="HomePage" data-description=" ">
+        <%=image_tag('/img/work/milton-keynes-college/gallery_1_thumb.jpg') %>
+      </li>
 
-        </li>
+      <li data-src="<%=image_path('/img/work/milton-keynes-college/gallery_2.jpg') %>" data-title="Content Page" data-description=" ">
+        <%=image_tag('/img/work/milton-keynes-college/gallery_2_thumb.jpg') %>
+      </li>
+
+      <li data-src="<%=image_path('/img/work/milton-keynes-college/gallery_3.jpg') %>" data-title="Content Page" data-description=" ">
+        <%=image_tag('/img/work/milton-keynes-college/gallery_3_thumb.jpg') %>
+      </li>
+
+      <li data-src="<%=image_path('/img/work/milton-keynes-college/gallery_4.jpg') %>" data-title="Contact Page" data-description=" ">
+        <%=image_tag('/img/work/milton-keynes-college/gallery_4_thumb.jpg') %>
+      </li>
+
     </ul>
-</section>
+<% end %>

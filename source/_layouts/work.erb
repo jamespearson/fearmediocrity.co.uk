@@ -7,6 +7,7 @@
 <% content_for :image_url do %><%=image_path("/img/work/#{article.slug}/open-graph.jpg")%><% end %>
 
 <% content_for :og_type do %>article<% end %>
+<% content_for :twitter_card do %>summary_large_image<% end %>
 
 
 <% content_for :page_class do %>
@@ -20,33 +21,33 @@
         <span><%=article.data.work_title%></span>
     </h1>
 
-    <p>whilst working with <a href="http://somewhat.cc" rel="nofollow">Somewhat</a></p>
+
+    <p><%=yield_content(:byline)%></p>
 
 <% end %>
 
 
 <% wrap_layout :default do %>
 
-    <div class="masthead">
-
-    </div>
+    <% if article.data.url %>
+    <a href="<%=article.data.url%>" class="masthead" title="Click here to see the results of this project.">
+        View Project
+    </a>
+    <% else %>
+    <div class="masthead"></div>
+    <% end %>
 
     <div class="body">
       <%=yield%>
-    </div>
-
-
-    <% if article.data.gallery %>
-    <div class="gallery">
-
-      <h2>Project Gallery</h2>
-      <ul>
-        <li><a href="#" title>Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-        <li><a href="#">Title 1</a></li>
-      </ul>
 
     </div>
+
+    <% if content_for?(:gallery) %>
+        <div id="gallery" class="gallery">
+          <h2>Project Gallery</h2>
+          <%=yield_content(:gallery)%>
+        </div>
     <% end %>
+
 <% end %>
+

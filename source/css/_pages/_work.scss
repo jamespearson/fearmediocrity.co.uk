@@ -4,20 +4,30 @@ html{
 
     &.work{
 
+      .masthead{
+        background: transparent 50% 0% no-repeat;
+        background-size: 680px 225px;
+        color: transparent;
+        display: block;
+        border-radius: 3px;
+        font-size: 0;
+        padding-bottom: 33%;
+        opacity: 0.5;
+      }
 
       > div{
-        &.masthead{
-          background: transparent 50% 0% no-repeat;
-          background-size: 680px 225px;
-          border-radius: 3px;
-          padding-bottom: 33%;
-          opacity: 0.5;
-        }
-
 
         &.body{
           margin-top: 20px;
           border-top: 3px solid rgba($white,0.5);
+
+          .button{
+            @extend .button;
+
+            margin: 0 auto;
+            width: 75%;
+
+          }
 
           .skills{
             @include clearfix;
@@ -54,9 +64,10 @@ html{
                 height: 100px;
               }
 
-              &.css{  &:before{ background-image: image-url('css3.svg')}}
-              &.html{ &:before{ background-image: image-url('html5.svg')}}
-              &.ruby{ &:before{ background-image: image-url('ruby.svg')}}
+              &.css{    &:before{ background-image: image-url('css3.svg')}}
+              &.code{   &:before{ background-image: image-url('code.svg'); background-size: 70% 70%}}
+              &.html{   &:before{ background-image: image-url('html5.svg')}}
+              &.ruby{   &:before{ background-image: image-url('ruby.svg')}}
 
               h3{
                 margin: 0;
@@ -69,8 +80,6 @@ html{
 
         &.gallery{
           @include clearfix;
-
-          display: none;
 
           ul{
             @include inline_list;
@@ -90,30 +99,17 @@ html{
                 margin-right: 0;
               }
 
-              a{
-                display: block;
-                height: 155px;
-                position: relative;
-
-                &:before{
-                  content: "";
-                  border-radius: 3px;
-                  background-size: 155px 155px;
-                  height: 100%;
-                  left: 0;
-                  position: absolute;
-                  top: 0;
-                  transition: opacity 0.5s ease-out;
-                  width: 100%;
-                }
+              img{
+                max-width: 100%;
+                opacity: 0.5;
+                transition: opacity 0.5s ease-out;
 
                 &:hover,
                 &:focus{
-                  &:before{
-                    opacity: 0.5
-                  }
+                  opacity: 1;
                 }
               }
+
             }
 
           }
@@ -126,6 +122,16 @@ html{
 
         > div{
 
+          .button{
+            width: 100%;
+          }
+
+          &.masthead{
+            width: 100%;
+            padding-bottom: 33.10%;
+            background-size: contain;
+          }
+
           &.gallery{
             ul{
               padding: 20px;
@@ -137,6 +143,21 @@ html{
               }
             }
           }
+
+          &.body{
+
+            ul.skills{
+
+              li{
+                float: none;
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+              }
+            }
+          }
+
+
         }
 
 

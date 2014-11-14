@@ -10,6 +10,13 @@
   background-image: image-url('html5.svg');
 }
 
+
+.svg-code{
+  @extend .svg-icon;
+  background-image: image-url('code.svg');
+}
+
+
 .svg-css{
   @extend .svg-icon;
   background-image: image-url('css3.svg');

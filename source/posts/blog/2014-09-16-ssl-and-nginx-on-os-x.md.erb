@@ -1,0 +1,101 @@
+---
+title: "Setting up SSL and Nginx on OS X, for Rails"
+description: "How to setup Nginx to proxy SSL to your Rails app on OS X 10.10"
+tags: server, security, development
+layout: article
+---
+
+With Google now favouring sites served over SSL, there are even fewer reasons that your web app shouldn't be using SSL by default. But when your building a site using oAuth for third party sign-in, it's essential.
+READMORE
+
+The steps below are for OSX 10.9 Mavericks and OSX 10.10 Yosemite.
+
+## Generating the SSL certificates
+I tend to use wild card SSL certificates from Namecheap for my client projects. This allows unlimited subdomains / environments to use the same certificate. It also allows development to mirror production more closely.
+
+### Why not use self-signed certificates
+Self signing an SSL certificate is free, and not difficult to do (see here), but self signed certificates will not be automatically trusted by the browser. You will have to explicitly trust the certificate, and then explain to your clients / beta testers how to do the same.
+
+### Generating the certificate
+Namecheap offer some excelent links and support for generating your SSL certificate. I'd recommend reading [this article](https://support.comodo.com/index.php?/Knowledgebase/Article/View/1/19/csr-generation-using-openssl-apache-wmod_ssl-nginx-os-x) to get you started.
+
+
+## Installing Homebrew
+The easist way to install Nginx is to use Homebrew. If you don't have homebrew installed already run:
+
+~~~shell
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+~~~
+
+You may be prompted to install xcode-select , this is expected, and you should allow the install.
+
+## Installing Nginx
+With Homebrew installing Nginx is as easy as running:
+
+~~~shell
+brew update; brew install nginx
+~~~
+
+## Configuring Nginx
+With Nginx installed, use your favorite text editor to edit:
+
+~~~shell
+/usr/local/etc/nginx/nginx.conf
+~~~
+
+Towards the end of the file, inside the http brackets, add:
+
+~~~
+server {
+    listen  443 ssl;
+    server_name development.myapplication.com;
+    ssl on;
+
+    ssl_certificate   "/path/to/your/server.pem";
+    ssl_certificate_key  "/path/to/your/server.key";
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+
+    ssl_verify_client off;
+    ssl_protocols        SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+
+    root /path/to/your/server/public;
+
+    try_files $uri/index.html $uri @app;
+
+    location @app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto https; # for SSL, add this
+        proxy_redirect off;
+        proxy_pass http://localhost:5000;
+        proxy_ssl_session_reuse off;
+    }
+
+    error_page 500 502 503 504 /500.html;
+    client_max_body_size 4G;
+    keepalive_timeout 10;
+}
+~~~
+
+Save the file and run:
+
+~~~shell
+sudo nginx -s reload
+~~~
+
+Nginx will now take any requests to https://development.myapplication.com and pass them to http://localhost:5000 as SSL requests.
+
+## DNS Setup
+Finally, you will need to setup development.myapplication.com to point to your development machine.
+
+If you only to access the development machine locally you can setup your hosts file by editing /etc/hosts in your favourite text editor.
+
+If you'd like your development environment exposed to outside traffic you will need to edit the DNS record to point to your ip address. You will also need to instruct your router to allow requests made on port 443 to come to your machine.
+
+## In closing
+It's important to mirror your development environment as closely as possible. Using SSL will enable you to do this, and discover any problems sooner rather than later.

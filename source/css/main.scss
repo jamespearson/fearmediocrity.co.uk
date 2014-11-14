@@ -116,7 +116,7 @@ html {
   }
 }
 
-$project_list: cant-help-my-selfie chelsea-fc-hospitality tesco-academy;
+$project_list: cant-help-my-selfie chelsea-fc-hospitality tesco-academy inq-mobile inq-material milton-keynes-college;
 
 
 @import "_components/available";
@@ -133,3 +133,6 @@ $project_list: cant-help-my-selfie chelsea-fc-hospitality tesco-academy;
 @import "_pages/article";
 @import "_pages/index";
 @import "_pages/work";
+
+
+@import "_vendor/lightGallery";

@@ -1,9 +1,5 @@
 #= require "plugins/plugins.js"
 
-#= require "jquery-pjax/jquery.pjax.js"
-
-#= require "pjax-controller"
-
 #= require "google-analytics-events"
 
 $(window).bind "load", () ->
@@ -13,5 +9,10 @@ $(window).bind "load", () ->
     $body.find(' > *').css('opacity', 1);
   , 250
 
+  $gallery = $body.find('#gallery:eq(0) ul:eq(0)')
 
+  if $gallery.length > 0
 
+    $gallery.lightGallery
+      caption: true
+      desc: false

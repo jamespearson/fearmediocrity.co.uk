@@ -5,8 +5,11 @@ keywords: ruby, ruby on rails, french connection, selfie, campaign, developer
 layout: work
 client: French Connection
 work_title: "#CANTHELPMYSELFIE"
+url: http://selfie.frenchconnection.com
 gallery: true
 ---
+
+<% content_for(:byline) do%>whilst working with <a href="http://somewhat.cc" rel="nofollow">Somewhat</a><% end %>
 
 <section class="about">
   <header>
@@ -23,6 +26,7 @@ gallery: true
 
   <p>The campaign was a success, and had it's run extended to tour around other French Connection stores in the UK.</p>
 
+  <a href="<%=current_article.data.url%>" class="button"><span>View this project</span></a>
 </section>
 
 

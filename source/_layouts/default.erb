@@ -18,7 +18,7 @@
   <% url = "#{data.site.url}#{current_page.url}" %>
   <% image_url = "#{data.site.url}#{yield_content(:image_url)}" if content_for?(:image_url) %>
   <% og_type = yield_content(:og_type) if content_for?(:og_type) %>
-
+  <% twitter_card = yield_content(:twitter_card) if content_for?(:twitter_card) %>
 
   <title><%=title%></title>
 
@@ -26,7 +26,7 @@
   <meta name="keywords" content="<%=keywords%>">
   <meta name="author" content="<%= data.site.author.name %>">
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="<%= twitter_card || "summary"%>" />
   <meta name="twitter:url" content="<%= url %>" />
   <meta name="twitter:title" content="<%= title %>" />
   <meta name="twitter:site" content="@fearmediocrity" />
@@ -68,7 +68,7 @@
         <%= yield_content :header %>
     </header>
 
-    <%=partial :available if data.site.available %>
+    <%=partial :available if data.site.available && current_page.path != "availability.html" %>
 
     <%= yield %>
 
@@ -97,7 +97,13 @@
             <input type="submit" value="Send Message" id="saveForm" name="saveForm" tabindex="4" />
           </div>
 
+
       </form>
+
+
+      <aside>
+        <p>Or email <a href="mailto:website@fearmediocrity.co.uk">website@fearmediocrity.co.uk</a></p>
+      </aside>
 
       <%= partial :social %>
     </footer>
