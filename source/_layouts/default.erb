@@ -68,7 +68,9 @@
         <%= yield_content :header %>
     </header>
 
-    <%=partial :available if data.site.available && current_page.path != "availability.html" %>
+    <% if data.site.available && current_page.path != "availability.html" %>
+        <iframe width="100%"  src="https://www.yunojuno.com/p/james-pearson-1/availability/" scrolling="no" frameborder="0" class="yunojuno"></iframe>
+    <% end %>
 
     <%= yield %>
 
