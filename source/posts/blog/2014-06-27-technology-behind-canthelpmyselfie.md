@@ -1,7 +1,7 @@
 ---
-title: "Technology behind #CANTHELPMYSELFIE"
-description: "How we made an interactive store front with real time touch voting for French Connection."
-tags: client work, responsive, campaign
+title: "Adding iCloud Drive to the Dock on Yosemite"
+description: "A collection of tip to consider when developing HTML emails."
+tags: html email, tips
 layout: article
 ---
 
