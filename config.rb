@@ -106,7 +106,7 @@ set :js_dir, 'js'
 
 
 
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :no_intra_emphasis => true
 set :markdown_engine, :redcarpet
 
 # Build-specific configuration
